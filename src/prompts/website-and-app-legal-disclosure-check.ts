@@ -31,7 +31,7 @@ server.registerPrompt(
         role: "user",
         content: {
           type: "text",
-          text: `You are to perform a website & app legal disclosure audit for the digital product. You must inventory required disclosures, evaluate adequacy, identify risks, and produce an informational gap analysis—not legal advice.
+          text: `You are to perform a website & app legal disclosure audit for the digital product. You must inventory required disclosures, evaluate adequacy, identify risks.
 
 CONTEXT INPUTS:
 - Jurisdiction: ${jurisdiction}
@@ -109,8 +109,7 @@ Generate this report and save it in legal_docs/website-app-disclosure-check-repo
 STYLE & SAFETY:
 • You should remain neutral and evidence-based.
 • You should avoid definitive enforceability judgments—frame as potential risk.
-• You should end with: "Informational disclosure compliance mapping – not legal advice."`,
-        },
+        `},
       },
     ],
   })

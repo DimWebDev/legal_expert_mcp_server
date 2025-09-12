@@ -36,7 +36,7 @@ server.registerPrompt(
         role: "user",
         content: {
           type: "text",
-          text: `You are to perform a structured legal/compliance risk analysis and prioritization. Use an evidence-based approach and produce an informational framework—not legal advice.
+          text: `You are to perform a structured legal/compliance risk analysis and prioritization. Use an evidence-based approach.
 
 CONTEXT INPUTS:
 - Jurisdiction Focus: ${jurisdiction || "multi-jurisdiction"}
@@ -108,8 +108,7 @@ Generate this report and save it in legal_docs/risk-analysis-report-{timestamp}.
 STYLE & SAFETY:
 • You should keep entries succinct and structured.
 • You should avoid definitive legal outcome predictions; use conditional phrasing.
-• You should end with: "Informational risk prioritization framework – not legal advice."`,
-        },
+        `},
       },
     ],
   })

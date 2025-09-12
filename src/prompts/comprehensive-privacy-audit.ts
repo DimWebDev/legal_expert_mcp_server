@@ -29,7 +29,7 @@ server.registerPrompt(
         role: "user",
         content: {
           type: "text",
-          text: `You are to perform a comprehensive privacy compliance audit. You must follow the prescribed phased methodology, remain evidence-based, and avoid giving legal advice—only an informational compliance mapping and structured gap assessment.
+          text: `You are to perform a comprehensive privacy compliance audit. You must follow the prescribed phased methodology, remain evidence-based.
 
 CONTEXT INPUTS:
 - Jurisdiction: ${jurisdiction}
@@ -110,8 +110,7 @@ STYLE & SAFETY:
 • You should use neutral, factual language ("Observed", "Missing", "Likely", "Potential").
 • You should not quote statutes unless inference is strongly grounded.
 • You should avoid definitive legal conclusions; frame as informational mapping.
-• You should end with: "Informational privacy compliance mapping – not legal advice."`,
-        },
+        `},
       },
     ],
   })

@@ -32,7 +32,7 @@ server.registerPrompt(
         role: "user",
         content: {
           type: "text",
-          text: `You are to perform a market & customer compliance audit. You must assess customer-facing flows, marketing representations, subscription mechanics, and billing practices for alignment with consumer protection principles in ${jurisdiction}. Provide informational mapping only—not legal advice.
+          text: `You are to perform a market & customer compliance audit. You must assess customer-facing flows, marketing representations, subscription mechanics, and billing practices for alignment with consumer protection principles in ${jurisdiction}.
 
 CONTEXT INPUTS:
 - Jurisdiction: ${jurisdiction}
@@ -110,8 +110,7 @@ Generate this report and save it in legal_docs/market-customer-compliance-audit-
 STYLE & SAFETY:
 • You should use neutral phrasing (e.g., "Observed", "Potential", "Likely gap").
 • You should avoid normative legal instructions—focus on improvements and alignment.
-• You should end with: "Informational market & customer compliance mapping – not legal advice."`,
-        },
+        `},
       },
     ],
   })

@@ -32,7 +32,7 @@ server.registerPrompt(
           type: "text",
           text: `You are to perform a security & legal alignment assessment. You must map implemented security controls to legal, regulatory, and contractual obligations for ${
             jurisdiction || "multi-jurisdiction"
-          }. Provide an informational alignment report—not legal advice.
+          }.
 
 CONTEXT INPUTS:
 - Jurisdiction Scope: ${jurisdiction || "multi-jurisdiction"}
@@ -106,8 +106,7 @@ Generate this report and save it in legal_docs/security-legal-alignment-report-{
 STYLE & SAFETY:
 • You should avoid legal conclusions—use phrasing like "may increase exposure" / "suggests misalignment".
 • You should remain evidence-focused; mark uncertain items explicitly.
-• You should end with: "Informational security & legal alignment mapping – not legal advice."`,
-        },
+        `},
       },
     ],
   })

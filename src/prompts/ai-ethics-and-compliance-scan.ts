@@ -33,7 +33,7 @@ server.registerPrompt(
         role: "user",
         content: {
           type: "text",
-          text: `You are to perform an AI ethics and regulatory compliance scan. You must follow the structured methodology below and produce the specified output strictly in Markdown. You must not provide legal advice—only an informational mapping and structured assessment.
+          text: `You are to perform an AI ethics and regulatory compliance scan. You must follow the structured methodology below and produce the specified output strictly in Markdown.
 
 CONTEXT INPUTS YOU SHOULD USE:
 - Jurisdiction: ${jurisdiction}
@@ -127,8 +127,7 @@ STYLE & SAFETY REQUIREMENTS:
 FINAL OUTPUT FORMAT:
 You should produce valid Markdown with top-level headings (##) for each deliverable section.
 You should not include code execution unless analyzing discovered scripts.
-You should end with a short disclaimer: "Informational mapping only – not legal advice."`,
-        },
+        `},
       },
     ],
   })

@@ -27,7 +27,7 @@ server.registerPrompt(
         role: "user",
         content: {
           type: "text",
-          text: `You are to perform an intellectual property and open-source software compliance audit. You must produce an informational mapping – not legal advice – and follow the structured phases below.
+          text: `You are to perform an intellectual property and open-source software compliance audit. You must produce an informational mapping and follow the structured phases below.
 
 CONTEXT INPUTS:
 - Jurisdiction: ${jurisdiction}
@@ -105,8 +105,7 @@ Generate this report and save it in legal_docs/ip-oss-audit-report-{timestamp}.m
 STYLE & SAFETY:
 • You should keep language neutral and non-conclusive legally (informational mapping only).
 • You should not fabricate license identifiers; mark as "Unknown" if not discoverable.
-• You should end with: "Informational IP & OSS compliance mapping – not legal advice."`,
-        },
+        `},
       },
     ],
   })

@@ -36,7 +36,7 @@ server.registerPrompt(
         role: "user",
         content: {
           type: "text",
-          text: `You are to conduct a legal landscape discovery for this prompts-based Legal Expert MCP Server context. You must map obligations, safe boundaries, and strategic guardrails—providing informational framework mapping only (not legal advice).
+          text: `You are to conduct a legal landscape discovery for this prompts-based Legal Expert MCP Server context. You must map obligations, safe boundaries, and strategic guardrails.
 
 CONTEXT INPUTS:
 - Jurisdiction: ${jurisdiction}
@@ -114,8 +114,7 @@ STYLE & SAFETY
 FINAL OUTPUT
 • You should produce Markdown with clear section headings.
 • You should list assumptions explicitly where repository context is insufficient.
-• You should end with: "Informational legal landscape mapping – not legal advice."`,
-        },
+        `},
       },
     ],
   })
