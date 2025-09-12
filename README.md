@@ -236,7 +236,7 @@ Based on my research of the official Anthropic documentation and various setup g
 To add the Legal Expert MCP Server to Claude Code, use the command line interface:
 
 ```bash
-# Basic installation using npx
+# Basic installation using npx inside a directory
 claude mcp add legal-expert npx legal-expert-mcp-server
 
 
@@ -248,7 +248,7 @@ claude mcp add legal-expert --scope user npx  legal-expert-mcp-server
 
 VS Code supports MCP servers through GitHub Copilot's agent mode:
 
-1. **Create Workspace Configuration**[3]
+1. **Create Workspace Configuration**
    Create a `.vscode/mcp.json` file in your project:
 
    ```json
@@ -317,7 +317,5 @@ After configuration, verify the installation:
 1. **Claude Code**: Look for the hammer icon or use `/mcp` command
 2. **VS Code**: Check that tools appear in Copilot agent mode
 3. **Cursor**: Look for green status indicator in MCP settings and available tools in chat
-
-All clients will prompt for permission before executing MCP tools, ensuring security and user control over legal analysis operations.
 
 ---
