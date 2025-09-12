@@ -246,3 +246,5 @@ mcp_logs/
 mcp_cache/
 
 ai_docs/
+
+package-lock.json
