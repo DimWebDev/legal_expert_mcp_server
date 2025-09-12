@@ -91,14 +91,22 @@ Below each prompt lists **Required** and **Optional** arguments you can pass to 
 
 ## How to Use Them
 
-In VS Code Claude Code and Cursor, these prompts are available as slash commands. When you invoke a prompt using its slash command (e.g., `/legal-landscape-discovery`), the system will interactively prompt you to provide the required and optional arguments for that prompt. Required arguments must be provided to proceed, while optional ones can be left blank if not applicable to your context.
+In Claude Code, VS Code, and Cursor, these prompts are available as slash commands. When you invoke a prompt using its slash command (e.g., `/legal-landscape-discovery`), the system will interactively prompt you to provide the required and optional arguments for that prompt.
+
+**Claude Code** enforces each prompt's **argsSchema** by interactively collecting required arguments before execution. When you type a slash command for an MCP prompt that has mandatory parameters, Claude Code will:
+
+1. Display an inline form listing all **required** arguments first (marked with a red asterisk) followed by any **optional** arguments.
+2. Prevent execution until every required field has been filled. Leaving a required field blank shows a validation error.
+3. Automatically insert your responses into the prompt's JSON payload once you confirm, then dispatch the MCP request to your configured server.
+
+**VS Code and Cursor** similarly prompt for arguments interactively, ensuring required arguments must be provided to proceed, while optional ones can be left blank if not applicable to your context.
 
 For example:
 
 - `/legal-landscape-discovery` will prompt for `jurisdiction` and `sector` (required), and optionally `businessModel` and `targetPath`.
 - `/comprehensive-privacy-audit` will prompt for `jurisdiction` (required), and optionally `regulations` and `targetPath`.
 
-This interactive prompting ensures that each analysis is tailored to your specific legal, jurisdictional, and product context.
+This interactive prompting ensures that each analysis is tailored to your specific legal, jurisdictional, and product context across all supported MCP clients.
 
 ## Output Conventions
 
