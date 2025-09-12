@@ -39,14 +39,15 @@ CONTEXT INPUTS:
 - Target Path: ${targetPath || "workspace root"}
 - Declared Frameworks: ${securityFrameworks || "infer from artifacts"}
 
-PRE-SCAN (RAPID FILE INDEX YOU MUST PERFORM BEFORE PHASE 1):
+PRE-SCAN (RAPID CONTEXT PRIMING YOU MUST PERFORM BEFORE PHASE 1):
 • You should run an equivalent of: git ls-files (no truncation).
-• You should derive signals for security/control artifacts:
-  - All config / policy / infra directories (security, policies, config, infra, terraform, k8s, helm, deploy, ops).
-  - All files containing likely control keywords in filename: auth, access, encrypt, key, secret, token, log, monitor, alert, backup, retention, incident, breach.
-  - All SECURITY.md, incident response docs, runbooks (incident, response, playbook).
-  - All infrastructure-as-code file presence counts (*.tf, *.yaml, *.yml, Dockerfile, docker-compose, *.json policy docs).
-  - All potential secret exposure filenames (.env, secrets, key, cert) – list every occurrence (relative path).
+• You should analyze the codebase structure to understand:
+  - Security architecture and control implementation patterns.
+  - Infrastructure and deployment configurations.
+  - Monitoring, logging, and incident response capabilities.
+  - Data protection and privacy control mechanisms.
+  - Compliance documentation and audit artifacts.
+• You should identify areas requiring focused security-legal analysis based on system complexity and data handling.
 • You should not read file contents during pre-scan—only list relative paths / aggregated counts.
 
 YOUR OBJECTIVES:

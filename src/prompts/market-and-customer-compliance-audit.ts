@@ -40,14 +40,15 @@ CONTEXT INPUTS:
 - Target Path: ${targetPath || "workspace root"}
 - Payment Provider: ${paymentProvider || "infer or list all detected"}
 
-PRE-SCAN (RAPID FILE INDEX YOU MUST PERFORM BEFORE PHASE 1):
+PRE-SCAN (RAPID CONTEXT PRIMING YOU MUST PERFORM BEFORE PHASE 1):
 • You should run an equivalent of: git ls-files (no truncation).
-• You should identify and note:
-  - All pricing / plan / subscription related files (pricing, price, plan, billing, subscribe, renewal, cancel, refund) – list every occurrence.
-  - All marketing / claims surfaces (marketing, promo, campaign, landing, hero, claim, testimonial) – list every occurrence.
-  - All payment integration indicators (stripe, paypal, square, payment, checkout) – list every occurrence.
-  - All localization or region directories (i18n, locales, lang) if present.
-  - Absence of cancellation / refund signal if no file names match cancellation/refund patterns.
+• You should analyze the codebase structure to understand:
+  - Customer acquisition and conversion flows.
+  - Pricing and billing system architecture.
+  - Marketing and promotional content organization.
+  - Payment processing and financial integrations.
+  - Customer support and dispute resolution mechanisms.
+• You should identify areas requiring focused compliance analysis based on monetization and customer interaction patterns.
 • You should not read file contents—list relative paths only.
 
 YOUR OBJECTIVES:

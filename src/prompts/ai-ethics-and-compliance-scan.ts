@@ -45,15 +45,17 @@ CONTEXT INPUTS YOU SHOULD USE:
             riskLevel || "determine from classification"
           }
 
-PRE-SCAN (RAPID FILE INDEX YOU MUST PERFORM BEFORE PHASE 1):
-• You should first obtain the complete repository file listing using: git ls-files (no truncation).
-• You should derive:
-  - Count of all files with AI/ML-relevant extensions (.py, .ipynb, .pkl, .pt, .onnx, .h5).
-  - Presence of all model / data directories (models/, data/, datasets/, ml/, ai/, experiments/, notebooks/).
-  - Presence of all evaluation or metrics scripts (eval, metrics, validate, benchmark in filename).
-  - Presence of all governance / documentation artifacts (MODEL_CARD, model_card, README in model dirs, architecture docs).
-  - All large binary artifacts (extensions: .jar .wasm .so .dll .dylib .a .bin .exe) that may imply embedded models – list every occurrence (relative path).
-• You should only reference file names / relative paths—do not read file contents during pre-scan.
+PRE-SCAN (RAPID CONTEXT PRIMING YOU MUST PERFORM BEFORE PHASE 1):
+• You should obtain the complete repository file listing using: git ls-files (no truncation).
+• You should analyze the codebase structure to understand:
+  - Primary programming languages and frameworks used (based on file extensions and common patterns).
+  - Directory organization and naming conventions that suggest AI/ML components.
+  - Presence of configuration files, documentation, and governance artifacts.
+  - File distribution patterns that indicate development vs. production vs. data assets.
+  - Any unusual directory structures or naming patterns that might indicate specialized AI/ML workflows.
+• You should identify high-priority areas for focused analysis based on file clustering and naming patterns.
+• You should note any indicators of scale, complexity, or specialized domains (healthcare, finance, etc.).
+• You should only reference file names/relative paths—do not read file contents during pre-scan.
 
 YOUR OBJECTIVES:
 1. You should discover AI/ML system components and classify them by risk.

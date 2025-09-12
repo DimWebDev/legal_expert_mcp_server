@@ -38,14 +38,15 @@ CONTEXT INPUTS:
 - Target Path: ${targetPath || "workspace root"}
 - Product Type: ${productType || "infer from repository structure"}
 
-PRE-SCAN (RAPID FILE INDEX YOU MUST PERFORM BEFORE PHASE 1):
+PRE-SCAN (RAPID CONTEXT PRIMING YOU MUST PERFORM BEFORE PHASE 1):
 • You should run an equivalent of: git ls-files (no truncation).
-• You should identify and list:
-  - All legal / policy doc candidates (terms, privacy, cookie, imprint, legal, disclaimer, accessibility, rights) – list every occurrence.
-  - All localization / i18n structure (presence of i18n/, locales/, lang/ directories) – list all directories.
-  - All template / component directories likely hosting footer or navigation (components, layouts, ui, app, pages) – list all with representative subpaths.
-  - All evidence of version markers (files whose names or contents imply date/version—list all filenames containing YYYY or version patterns like v1, v2).
-  - Missing baseline doc signals (explicitly state if no privacy/terms/cookie file detected in listing scope).
+• You should analyze the codebase structure to understand:
+  - User-facing components and content organization.
+  - Internationalization and localization patterns.
+  - Legal and policy document placement and naming conventions.
+  - Version control and update mechanisms for legal content.
+  - Evidence of user interaction flows and consent mechanisms.
+• You should identify areas likely requiring legal disclosures based on user-facing features and data handling.
 • You should NOT read file contents in pre-scan; file names / relative paths only.
 
 YOUR OBJECTIVES:

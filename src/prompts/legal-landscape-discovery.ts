@@ -46,14 +46,15 @@ CONTEXT INPUTS:
           }
 - Target Path: ${targetPath || "workspace root"}
 
-PRE-SCAN (RAPID FILE INDEX YOU MUST PERFORM BEFORE OBJECTIVES):
-• You should run an equivalent of: git ls-files (no truncation) to rapidly enumerate repository shape and governance indicators.
-• You should capture:
-  - All foundational governance docs: LICENSE, README, CONTRIBUTING, CODE_OF_CONDUCT, SECURITY, NOTICE (list each found).
-  - Prompt / methodology density (count all files under prompts/ and any shared policy fragments).
-  - All docs/ or policies/ directories; list all top-level doc filenames.
-  - All disclaimers / legal notice patterns (disclaimer, legal, terms) – filenames only.
-  - All AI / model directories (models, ai, ml) for future governance considerations.
+PRE-SCAN (RAPID CONTEXT PRIMING YOU MUST PERFORM BEFORE OBJECTIVES):
+• You should run an equivalent of: git ls-files (no truncation) to rapidly understand repository structure and governance approach.
+• You should analyze the codebase to understand:
+  - Overall project architecture and technology choices.
+  - Governance and documentation patterns.
+  - Distribution and deployment indicators.
+  - Security and compliance artifacts.
+  - Development workflow and contribution patterns.
+• You should identify areas requiring focused legal analysis based on project complexity and domain.
 • You should not read file contents—only names / relative paths.
 
 YOUR OBJECTIVES:

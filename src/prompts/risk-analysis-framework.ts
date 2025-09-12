@@ -48,11 +48,12 @@ CONTEXT INPUTS:
 - Provided Findings Seed: ${findings || "none explicitly provided"}
 
 OPTIONAL PRE-SCAN (ONLY IF NO PRIOR AUDIT OUTPUTS PROVIDED):
-• You may run an equivalent of: git ls-files (no truncation) to gather a full structural signal set.
-• You should derive high-level indicators ONLY to seed generic risk brainstorming:
-  - Presence of all governance / policy docs (LICENSE, SECURITY, CONTRIBUTING, PRIVACY, TERMS) – list each found.
-  - Domain signal density (count all files containing privacy, auth, license, contract, payment in filename).
-  - Approximate technology surface (dominant extensions: .ts, .py, .go, etc.).
+• You may run an equivalent of: git ls-files (no truncation) to understand overall project structure and risk surface.
+• You should analyze the codebase to understand:
+  - Technology stack and architectural complexity.
+  - Governance and compliance documentation patterns.
+  - Domain-specific risk indicators based on file naming and organization.
+  - Scale and operational complexity signals.
 • You should NOT over-index on this listing; if previous detailed audits exist they supersede pre-scan heuristics.
 
 

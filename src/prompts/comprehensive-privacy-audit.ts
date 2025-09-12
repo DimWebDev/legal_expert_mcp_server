@@ -36,13 +36,16 @@ CONTEXT INPUTS:
 - Declared / Applicable Regulations: ${regulations || "infer from jurisdiction"}
 - Target Path: ${targetPath || "workspace root"}
 
-PRE-SCAN (RAPID FILE INDEX YOU MUST PERFORM BEFORE PHASE 1):
+PRE-SCAN (RAPID CONTEXT PRIMING YOU MUST PERFORM BEFORE PHASE 1):
 • You should run an equivalent of: git ls-files (no truncation).
-• You should extract indicators for:
-  - All policy / disclosure documents (privacy, data, retention, erase, export, rights, consent) – list every occurrence.
-  - All data handling / lifecycle scripts (cron, job, retention, delete, purge) – list every occurrence.
-  - All third-party processor references (sdk, analytics, tracking, segment, amplitude, mixpanel, sentry) – list every occurrence.
-  - All configuration files suggesting data categories (schema, model, dto, entity) – list every occurrence.
+• You should analyze the codebase structure to understand:
+  - Primary data handling patterns and technologies used.
+  - Directory organization suggesting data flows (collection, processing, storage, transfer).
+  - Presence of policy, consent, and rights management artifacts.
+  - Configuration files indicating data categories and processing activities.
+  - Third-party integrations that might involve data sharing or processing.
+• You should identify areas likely to contain personal data processing based on naming patterns and file clustering.
+• You should note any indicators of data scale, user-facing features, or international operations.
 • You should not read contents during pre-scan—only list relative paths.
 
 YOUR OBJECTIVES:

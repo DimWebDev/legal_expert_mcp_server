@@ -34,15 +34,16 @@ CONTEXT INPUTS:
 - Target Path: ${targetPath || "workspace root"}
 - Code Ownership Model: ${codeOwnershipModel || "infer from repository signals"}
 
-PRE-SCAN (RAPID FILE INDEX YOU MUST PERFORM BEFORE PHASE 1):
+PRE-SCAN (RAPID CONTEXT PRIMING YOU MUST PERFORM BEFORE PHASE 1):
 • You should obtain the complete tracked file listing using: git ls-files (no truncation) and count total files.
-• You should derive:
-  - Total tracked files count.
-  - All manifest files (package.json, requirements.txt, go.mod, Cargo.toml, composer.json, Gemfile, pyproject.toml) present.
-  - Presence of LICENSE / NOTICE / COPYING / THIRD_PARTY files (list each found).
-  - Presence of CONTRIBUTING, CODE_OF_CONDUCT, SECURITY, CLA indicators (list each found).
-  - Directory distribution (directory → file count) excluding vendor/build/dist/node_modules; still mention excluded directories with aggregate counts if large.
-  - All binary / large artifact indicators (extensions: .jar .wasm .so .dll .dylib .a .bin .exe) – list every occurrence (relative path).
+• You should analyze the codebase structure to understand:
+  - Technology stack and dependency management approach.
+  - Code organization patterns suggesting proprietary vs. third-party components.
+  - Presence of licensing, attribution, and governance documentation.
+  - Distribution of source code vs. binary artifacts.
+  - Development workflow indicators (contributing guidelines, security policies, etc.).
+• You should identify areas requiring focused IP analysis based on file clustering and naming conventions.
+• You should note any indicators of code scale, external contributions, or specialized domains.
 • You should only reference file names/relative paths—not file contents—in this pre-scan summary.
 
 YOUR OBJECTIVES:

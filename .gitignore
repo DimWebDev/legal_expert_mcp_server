@@ -244,3 +244,5 @@ data/
 # MCP specific (if applicable)
 mcp_logs/
 mcp_cache/
+
+ai_docs/
