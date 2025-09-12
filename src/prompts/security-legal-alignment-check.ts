@@ -48,7 +48,6 @@ PRE-SCAN (RAPID FILE INDEX YOU MUST PERFORM BEFORE PHASE 1):
   - All infrastructure-as-code file presence counts (*.tf, *.yaml, *.yml, Dockerfile, docker-compose, *.json policy docs).
   - All potential secret exposure filenames (.env, secrets, key, cert) – list every occurrence (relative path).
 • You should not read file contents during pre-scan—only list relative paths / aggregated counts.
-• You should include a comprehensive "FILE INDEX SUMMARY" section near the start of the final report summarizing these signals.
 
 YOUR OBJECTIVES:
 1. You should inventory core security controls (authn, authz, encryption, logging, monitoring, retention, incident response).

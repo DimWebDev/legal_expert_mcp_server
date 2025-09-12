@@ -54,7 +54,7 @@ OPTIONAL PRE-SCAN (ONLY IF NO PRIOR AUDIT OUTPUTS PROVIDED):
   - Domain signal density (count all files containing privacy, auth, license, contract, payment in filename).
   - Approximate technology surface (dominant extensions: .ts, .py, .go, etc.).
 • You should NOT over-index on this listing; if previous detailed audits exist they supersede pre-scan heuristics.
-• You should include a comprehensive "(Optional File Index Observations)" subsection only if you performed this step.
+
 
 YOUR OBJECTIVES:
 1. You should synthesize risk items across included domains.
