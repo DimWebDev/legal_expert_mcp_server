@@ -2,7 +2,7 @@
 
 > DISCLAIMER (READ FIRST)
 >
-> This Model Context Protocol (MCP) server produces _informational_ analyses only. It does **not** constitute legal advice, does **not** create an attorney–client relationship, and may contain errors or omissions. Large Language Models (LLMs) can hallucinate or misinterpret context. You (the user) are solely responsible for validating outputs before relying on them. The author(s) of this project assume **no liability** for any legal, regulatory, commercial, or compliance consequences arising from use of the generated reports.
+> This Legal Expert Model Context Protocol (MCP) server produces _informational_ analyses only. It does **not** constitute legal advice, does **not** create an attorney–client relationship, and may contain errors or omissions. Large Language Models (LLMs) can hallucinate or misinterpret context. You (the user) are solely responsible for validating outputs before relying on them. The author(s) of this project assume **no liability** for any legal, regulatory, commercial, or compliance consequences arising from use of the generated reports.
 
 ---
 
@@ -88,6 +88,17 @@ Below each prompt lists **Required** and **Optional** arguments you can pass to 
 - Required: (none)
 - Optional: `category`
 - Purpose: Introspect & filter available prompts plus usage guidance.
+
+## How to Use Them
+
+In VS Code Claude Code and Cursor, these prompts are available as slash commands. When you invoke a prompt using its slash command (e.g., `/legal-landscape-discovery`), the system will interactively prompt you to provide the required and optional arguments for that prompt. Required arguments must be provided to proceed, while optional ones can be left blank if not applicable to your context.
+
+For example:
+
+- `/legal-landscape-discovery` will prompt for `jurisdiction` and `sector` (required), and optionally `businessModel` and `targetPath`.
+- `/comprehensive-privacy-audit` will prompt for `jurisdiction` (required), and optionally `regulations` and `targetPath`.
+
+This interactive prompting ensures that each analysis is tailored to your specific legal, jurisdictional, and product context.
 
 ## Output Conventions
 
@@ -181,22 +192,97 @@ Before relying on a report:
 - [ ] Escalate Critical / High items to qualified professionals
 - [ ] Document which recommendations you accepted/deferred
 
-## Contributing
+Based on my research of the official Anthropic documentation and various setup guides, here's a comprehensive section you
 
-Pull requests to add new prompt modules or improve taxonomies welcome. Keep:
+## Installation & Configuration
 
-- Clear section ordering
-- Zod schemas explicit & minimal
-- Non-prescriptive, informational tone
+### Claude Code
 
-## License
+To add the Legal Expert MCP Server to Claude Code, use the command line interface:
 
-MIT – see `LICENSE`.
+```bash
+# Basic installation using npx
+claude mcp add legal-expert npx legal-expert-mcp-server
 
-## Attribution
 
-Designed for structured legal/compliance surface mapping in developer workflows.
+# For user-wide availability
+claude mcp add legal-expert --scope user npx  legal-expert-mcp-server
+```
+
+### VS Code
+
+VS Code supports MCP servers through GitHub Copilot's agent mode:
+
+1. **Create Workspace Configuration**[3]
+   Create a `.vscode/mcp.json` file in your project:
+
+   ```json
+   {
+     "servers": {
+       "legal-expert": {
+         "type": "stdio",
+         "command": "npx",
+         "args": ["-y", "legal-expert-mcp-server"]
+       }
+     }
+   }
+   ```
+
+### Cursor
+
+Cursor provides multiple configuration options for MCP servers:
+
+#### Option 1: Using Cursor Settings UI
+
+1. **Open Cursor Settings**
+
+   - Use `Ctrl+Shift+P` and search for "cursor settings"
+   - Navigate to **Tools & Integrations** → **MCP**
+   - Click **"+ Add New MCP Server"** or **"New MCP Server"**
+
+2. **Configure Server**
+   - **Name**: `legal-expert`
+   - **Command**: `npx`
+   - **Args**: `["-y", "legal-expert-mcp-server"]`
+
+#### Option 2: Manual JSON Configuration
+
+Create or edit the MCP configuration file:
+
+**For Project-Specific Access**:[9]
+Create `.cursor/mcp.json` in your project root:
+
+```json
+{
+  "mcpServers": {
+    "legal-expert": {
+      "command": "npx",
+      "args": ["-y", "legal-expert-mcp-server"],
+      "env": {}
+    }
+  }
+}
+```
+
+**For Global Access**:[9]
+Create `~/.cursor/mcp.json` in your home directory with the same configuration.
+
+#### Option 3: Quick Setup Command
+
+If available as an npm package, you can use the automated setup:[7]
+
+```bash
+npx legal-expert-mcp-server setup --client cursor
+```
+
+### Verification
+
+After configuration, verify the installation:
+
+1. **Claude Code**: Look for the hammer icon or use `/mcp` command
+2. **VS Code**: Check that tools appear in Copilot agent mode
+3. **Cursor**: Look for green status indicator in MCP settings and available tools in chat
+
+All clients will prompt for permission before executing MCP tools, ensuring security and user control over legal analysis operations.
 
 ---
-
-**Reminder:** This system is a _decision support lens_, not a substitute for professional legal judgment.

@@ -15,7 +15,7 @@
     "security",
     "risk-analysis"
   ],
-  "author": "Legal Expert MCP Server",
+  "author": "DimWevDev",
   "license": "MIT",
   "main": "dist/index.js",
   "bin": {
