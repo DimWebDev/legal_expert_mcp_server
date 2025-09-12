@@ -15,7 +15,7 @@
     "security",
     "risk-analysis"
   ],
-  "author": "DimWevDev",
+  "author": "DimWebDev",
   "license": "MIT",
   "main": "dist/index.js",
   "bin": {
@@ -47,10 +47,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/legal-expert-mcp-server.git"
+    "url": "https://github.com/DimWebDev/legal_expert_mcp_server.git"
   },
-  "homepage": "https://github.com/yourusername/legal-expert-mcp-server#readme",
+  "homepage": "https://github.com/DimWebDev/legal_expert_mcp_server#readme",
   "bugs": {
-    "url": "https://github.com/yourusername/legal-expert-mcp-server/issues"
+    "url": "https://github.com/DimWebDev/legal_expert_mcp_server/issues"
   }
 }
