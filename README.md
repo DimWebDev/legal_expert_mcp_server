@@ -1,10 +1,36 @@
 # Legal Expert MCP Server
-
-> DISCLAIMER (READ FIRST)
->
+> [!WARNING]
 > This Legal Expert Model Context Protocol (MCP) server produces _informational_ analyses only. It does **not** constitute legal advice, does **not** create an attorney–client relationship, and may contain errors or omissions. Large Language Models (LLMs) can hallucinate or misinterpret context. You (the user) are solely responsible for validating outputs before relying on them. The author(s) of this project assume **no liability** for any legal, regulatory, commercial, or compliance consequences arising from use of the generated reports.
 
----
+## Table of Contents
+
+- [What This Is](#what-this-is)
+- [Core Benefits](#core-benefits)
+- [When To Use Which Prompt](#when-to-use-which-prompt)
+- [Prompts & Arguments (Adaptability Matrix)](#prompts--arguments-adaptability-matrix)
+  - [1. legal-landscape-discovery](#1-legal-landscape-discovery)
+  - [2. risk-analysis-framework](#2-risk-analysis-framework)
+  - [3. comprehensive-privacy-audit](#3-comprehensive-privacy-audit)
+  - [4. website-and-app-legal-disclosure-check](#4-website-and-app-legal-disclosure-check)
+  - [5. security-legal-alignment-check](#5-security-legal-alignment-check)
+  - [6. ai-ethics-and-compliance-scan](#6-ai-ethics-and-compliance-scan)
+  - [7. intellectual-property-and-oss-audit](#7-intellectual-property-and-oss-audit)
+  - [8. market-and-customer-compliance-audit](#8-market-and-customer-compliance-audit)
+  - [9. legal-expert-prompts-catalog](#9-legal-expert-prompts-catalog)
+- [How to Use Them](#how-to-use-them)
+- [Output Conventions](#output-conventions)
+- [How It Works (Architecture)](#how-it-works-architecture)
+- [Quick Start](#quick-start)
+  - [Use With an MCP Client](#use-with-an-mcp-client)
+- [Example Workflow](#example-workflow)
+- [Adaptability Patterns](#adaptability-patterns)
+- [Reliability & Limitations](#reliability--limitations)
+- [Safety & Review Checklist](#safety--review-checklist)
+- [Installation & Configuration](#installation--configuration)
+  - [Claude Code](#claude-code)
+  - [VS Code](#vs-code)
+  - [Cursor](#cursor)
+  - [Verification](#verification)
 
 ## What This Is
 
