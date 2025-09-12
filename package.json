@@ -1,0 +1,56 @@
+{
+  "name": "legal-expert-mcp-server",
+  "version": "1.0.0",
+  "description": "MCP server providing elite-level legal expert prompts for comprehensive compliance analysis",
+  "keywords": [
+    "mcp",
+    "legal",
+    "compliance",
+    "privacy",
+    "gdpr",
+    "ip",
+    "corporate",
+    "ai-ethics",
+    "employment",
+    "security",
+    "risk-analysis"
+  ],
+  "author": "Legal Expert MCP Server",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "bin": {
+    "legal-expert-mcp-server": "dist/index.js"
+  },
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsc --watch",
+    "clean": "rm -rf dist",
+    "prepare": "npm run build",
+    "test": "echo \"No tests yet\" && exit 0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.18.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  },
+  "files": [
+    "dist/**/*",
+    "README.md",
+    "LICENSE"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/legal-expert-mcp-server.git"
+  },
+  "homepage": "https://github.com/yourusername/legal-expert-mcp-server#readme",
+  "bugs": {
+    "url": "https://github.com/yourusername/legal-expert-mcp-server/issues"
+  }
+}
