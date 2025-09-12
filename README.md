@@ -1,4 +1,5 @@
 # Legal Expert MCP Server
+
 > [!WARNING]
 > This Legal Expert Model Context Protocol (MCP) server produces _informational_ analyses only. It does **not** constitute legal advice, does **not** create an attorney–client relationship, and may contain errors or omissions. Large Language Models (LLMs) can hallucinate or misinterpret context. You (the user) are solely responsible for validating outputs before relying on them. The author(s) of this project assume **no liability** for any legal, regulatory, commercial, or compliance consequences arising from use of the generated reports.
 
@@ -20,7 +21,7 @@
 - [How to Use Them](#how-to-use-them)
 - [Output Conventions](#output-conventions)
 - [How It Works (Architecture)](#how-it-works-architecture)
-- [Quick Start](#quick-start)
+- [Quick Start Local MCP Server](#quick-start)
   - [Use With an MCP Client](#use-with-an-mcp-client)
 - [Example Workflow](#example-workflow)
 - [Adaptability Patterns](#adaptability-patterns)
