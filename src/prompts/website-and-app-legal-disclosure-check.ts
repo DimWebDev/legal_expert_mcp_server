@@ -91,6 +91,8 @@ RISK HEURISTICS (APPLY CAREFULLY):
 • You should treat minor stylistic inconsistencies as Low.
 
 DELIVERABLES (MANDATORY ORDER):
+Generate this report and save it in legal_docs/website-app-disclosure-check-report-{timestamp}.md. Report the output directory to the user.
+
 1. Disclosure Inventory
   - You should list: document | location(s) | status | revision marker | risk level.
 2. Coverage Gap Matrix

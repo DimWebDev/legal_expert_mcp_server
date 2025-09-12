@@ -88,6 +88,8 @@ RISK HEURISTICS (APPLY CAREFULLY):
 • You should treat absence of incident classification criteria as Medium escalating to High if also no notification mapping.
 
 DELIVERABLES (MANDATORY ORDER):
+Generate this report and save it in legal_docs/security-legal-alignment-report-{timestamp}.md. Report the output directory to the user.
+
 1. Security Control Inventory
   - You should table: control | implementation summary | evidence reference | maturity state.
 2. Legal & Obligation Mapping

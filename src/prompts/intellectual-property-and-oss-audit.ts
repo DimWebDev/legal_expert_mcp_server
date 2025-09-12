@@ -87,6 +87,8 @@ RISK HEURISTICS (APPLY JUDICIOUSLY):
 • You should treat unreviewed transitive dependencies as potential latent license conflict (note as monitoring item).
 
 DELIVERABLES (MANDATORY ORDER):
+Generate this report and save it in legal_docs/ip-oss-audit-report-{timestamp}.md. Report the output directory to the user.
+
 1. IP Asset Inventory
   - You should list: component | type (proprietary/third-party/generated/AI-assisted) | origin | notes.
 2. License Compliance Matrix

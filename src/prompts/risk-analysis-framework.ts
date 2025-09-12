@@ -90,6 +90,8 @@ RISK HEURISTICS (APPLY JUDGMENT):
 • You should treat systemic logging / audit gaps as High multiplier for multiple downstream risks.
 
 DELIVERABLES (MANDATORY ORDER):
+Generate this report and save it in legal_docs/risk-analysis-report-{timestamp}.md. Report the output directory to the user.
+
 1. Executive Summary
   - You should summarize overall risk posture, top 5 risks, and immediate attention items.
 2. Risk Register Matrix

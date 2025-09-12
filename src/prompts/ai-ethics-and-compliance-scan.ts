@@ -99,6 +99,8 @@ LEGAL & ETHICAL HEURISTICS YOU MAY APPLY (ADAPT, DO NOT PARAPHRASE BLINDLY):
 • Foundation / large models may trigger additional disclosure & documentation duties (parameter scale, fine-tuning logs, safety policies).
 
 DELIVERABLES (MANDATORY SECTION ORDER):
+Generate this report and save it in legal_docs/ai-ethics-compliance-report-{timestamp}.md. Report the output directory to the user.
+
 1. Executive Summary
   - You should list overall risk posture, top 5 risks, and classification overview.
 2. System Classification Matrix

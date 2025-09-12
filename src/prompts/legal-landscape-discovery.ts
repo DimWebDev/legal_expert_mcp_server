@@ -95,6 +95,8 @@ RISK CATEGORIZATION HEURISTICS
 • You should classify: Critical (UPL breach / unlawful processing risk), High (reputational or credibility erosion), Medium (process maturity gap), Low (optimization opportunity).
 
 DELIVERABLES (MANDATORY ORDER)
+Generate this report and save it in legal_docs/legal-landscape-discovery-report-{timestamp}.md. Report the output directory to the user.
+
 1. Executive Summary
 2. Regulatory & Framework Map
 3. Compliance Guardrail Matrix (area | current | target | gap | risk | control direction)

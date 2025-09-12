@@ -89,6 +89,8 @@ LEGAL & OPERATIONAL HEURISTICS (APPLY JUDICIOUSLY):
 • You should consider legitimate interest claims weak if no balancing context appears.
 
 DELIVERABLES (MANDATORY ORDER):
+Generate this report and save it in legal_docs/privacy-compliance-audit-report-{timestamp}.md. Report the output directory to the user.
+
 1. Executive Summary
   - You should present overall compliance posture, top 5 gaps, and general risk profile.
 2. Data Inventory Matrix

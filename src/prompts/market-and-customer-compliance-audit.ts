@@ -92,6 +92,8 @@ RISK HEURISTICS (APPLY REASONABLY):
 • You should treat minor formatting / labeling inconsistencies as Low unless compounding.
 
 DELIVERABLES (MANDATORY ORDER):
+Generate this report and save it in legal_docs/market-customer-compliance-audit-report-{timestamp}.md. Report the output directory to the user.
+
 1. Executive Summary
   - You should state overall consumer compliance posture and top 5 issues.
 2. Customer Journey Audit
