@@ -1,6 +1,6 @@
 {
   "name": "legal-expert-mcp-server",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "MCP server providing elite-level legal expert prompts for comprehensive compliance analysis",
   "keywords": [
     "mcp",
