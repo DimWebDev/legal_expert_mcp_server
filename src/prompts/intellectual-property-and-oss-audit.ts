@@ -10,6 +10,7 @@ server.registerPrompt(
     argsSchema: {
       jurisdiction: z
         .string()
+        .min(1, "Jurisdiction is required")
         .describe("Primary jurisdiction (US, EU, UK, CA, etc.)"),
       targetPath: z
         .string()

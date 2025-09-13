@@ -9,9 +9,11 @@ server.registerPrompt(
     argsSchema: {
       jurisdiction: z
         .string()
+        .min(1, "Jurisdiction is required")
         .describe("Primary market jurisdiction (US, EU, UK, CA, AU, etc.)"),
       sector: z
         .string()
+        .min(1, "Sector is required")
         .describe(
           "Business sector: fintech|healthtech|edtech|ecommerce|saas|marketplace|ai-ml (used as primary; inference validates only)"
         ),
