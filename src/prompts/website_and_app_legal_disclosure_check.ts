@@ -2,7 +2,7 @@ import { server } from "../server.js";
 import { z } from "zod";
 
 server.registerPrompt(
-  "website-and-app-legal-disclosure-check",
+  "website_and_app_legal_disclosure_check",
   {
     title: "Website & App Legal Disclosure Check",
     description:
@@ -32,7 +32,7 @@ server.registerPrompt(
         .describe("Product type: web|mobile|hybrid|api-platform"),
     },
   },
-  async ({ jurisdiction, sector, targetPath, productType }) => ({
+  ({ jurisdiction, sector, targetPath, productType }) => ({
     messages: [
       {
         role: "user",

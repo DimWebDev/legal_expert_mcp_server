@@ -2,7 +2,7 @@ import { server } from "../server.js";
 import { z } from "zod";
 
 server.registerPrompt(
-  "intellectual-property-and-oss-audit",
+  "intellectual_property_and_oss_audit",
   {
     title: "Intellectual Property & OSS Audit",
     description:
@@ -22,7 +22,7 @@ server.registerPrompt(
         .describe("Ownership model: internal|outsourced|mixed"),
     },
   },
-  async ({ jurisdiction, targetPath, codeOwnershipModel }) => ({
+  ({ jurisdiction, targetPath, codeOwnershipModel }) => ({
     messages: [
       {
         role: "user",

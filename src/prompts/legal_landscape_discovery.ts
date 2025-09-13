@@ -2,7 +2,7 @@ import { server } from "../server.js";
 import { z } from "zod";
 
 server.registerPrompt(
-  "legal-landscape-discovery",
+  "legal_landscape_discovery",
   {
     title: "Legal Landscape Discovery",
     description:
@@ -32,7 +32,7 @@ server.registerPrompt(
         ),
     },
   },
-  async ({ jurisdiction, sector, businessModel, targetPath }) => ({
+  ({ jurisdiction, sector, businessModel, targetPath }) => ({
     messages: [
       {
         role: "user",

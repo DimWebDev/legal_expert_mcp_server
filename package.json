@@ -1,6 +1,6 @@
 {
   "name": "legal-expert-mcp-server",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "MCP server providing elite-level legal expert prompts for comprehensive compliance analysis",
   "keywords": [
     "mcp",
@@ -34,7 +34,8 @@
     "node": ">=18.0.0"
   },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.18.0"
+    "@modelcontextprotocol/sdk": "^1.18.0",
+    "zod": "^3.25.76"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",

@@ -2,7 +2,7 @@ import { server } from "../server.js";
 import { z } from "zod";
 
 server.registerPrompt(
-  "comprehensive-privacy-audit",
+  "comprehensive_privacy_audit",
   {
     title: "Comprehensive Privacy Compliance Audit",
     description:
@@ -30,7 +30,7 @@ server.registerPrompt(
         ),
     },
   },
-  async ({ jurisdiction, sector, regulations, targetPath }) => ({
+  ({ jurisdiction, sector, regulations, targetPath }) => ({
     messages: [
       {
         role: "user",

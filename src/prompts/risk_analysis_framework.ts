@@ -2,7 +2,7 @@ import { server } from "../server.js";
 import { z } from "zod";
 
 server.registerPrompt(
-  "risk-analysis-framework",
+  "risk_analysis_framework",
   {
     title: "Risk Analysis Framework",
     description:
@@ -30,7 +30,7 @@ server.registerPrompt(
         .describe("Existing legal findings to analyze (comma-separated)"),
     },
   },
-  async ({ jurisdiction, businessContext, riskDomains, findings }) => ({
+  ({ jurisdiction, businessContext, riskDomains, findings }) => ({
     messages: [
       {
         role: "user",

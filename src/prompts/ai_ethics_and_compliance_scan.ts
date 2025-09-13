@@ -2,7 +2,7 @@ import { server } from "../server.js";
 import { z } from "zod";
 
 server.registerPrompt(
-  "ai-ethics-and-compliance-scan",
+  "ai_ethics_and_compliance_scan",
   {
     title: "AI Ethics & Compliance Scan",
     description:
@@ -34,7 +34,7 @@ server.registerPrompt(
         .describe("Anticipated risk level: minimal|limited|high|prohibited"),
     },
   },
-  async ({ jurisdiction, sector, aiModelType, targetPath, riskLevel }) => ({
+  ({ jurisdiction, sector, aiModelType, targetPath, riskLevel }) => ({
     messages: [
       {
         role: "user",

@@ -2,13 +2,13 @@ import { server } from "../server.js";
 import { z } from "zod";
 
 server.registerPrompt(
-  "legal-expert-prompts-catalog",
+  "legal_expert_prompts_catalog",
   {
     title: "Legal Expert Prompts Catalog",
     description: "List all available legal analysis prompts",
     argsSchema: {},
   },
-  async () => ({
+  () => ({
     messages: [
       {
         role: "user",
@@ -18,35 +18,35 @@ server.registerPrompt(
 
 ## Available Prompts
 
-- **legal-landscape-discovery**: Map baseline + sector + cross-border legal frameworks
+- **legal_landscape_discovery**: Map baseline + sector + cross-border legal frameworks
   - Required: jurisdiction, sector
   - Optional: businessModel, targetPath
 
-- **risk-analysis-framework**: Prioritize aggregated legal risks
+- **risk_analysis_framework**: Prioritize aggregated legal risks
   - Required: none
   - Optional: jurisdiction, businessContext, riskDomains, findings
 
-- **comprehensive-privacy-audit**: Data lifecycle + obligations gap assessment
+- **comprehensive_privacy_audit**: Data lifecycle + obligations gap assessment
   - Required: jurisdiction, sector
   - Optional: regulations, targetPath
 
-- **website-and-app-legal-disclosure-check**: Required disclosures inventory & gaps
+- **website_and_app_legal_disclosure_check**: Required disclosures inventory & gaps
   - Required: jurisdiction, sector
   - Optional: targetPath, productType
 
-- **security-legal-alignment-check**: Security control vs legal obligation mapping
+- **security_legal_alignment_check**: Security control vs legal obligation mapping
   - Required: jurisdiction, sector
   - Optional: targetPath, securityFrameworks
 
-- **ai-ethics-and-compliance-scan**: AI system classification & governance assessment
+- **ai_ethics_and_compliance_scan**: AI system classification & governance assessment
   - Required: jurisdiction, sector
   - Optional: aiModelType, targetPath, riskLevel
 
-- **intellectual-property-and-oss-audit**: IP chain, OSS licenses, infringement vectors
+- **intellectual_property_and_oss_audit**: IP chain, OSS licenses, infringement vectors
   - Required: jurisdiction
   - Optional: targetPath, codeOwnershipModel
 
-- **market-and-customer-compliance-audit**: Consumer-facing flows, pricing, marketing fairness
+- **market_and_customer_compliance_audit**: Consumer-facing flows, pricing, marketing fairness
   - Required: jurisdiction, sector
   - Optional: businessModel, targetPath, paymentProvider
 

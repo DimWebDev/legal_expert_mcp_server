@@ -2,7 +2,7 @@ import { server } from "../server.js";
 import { z } from "zod";
 
 server.registerPrompt(
-  "market-and-customer-compliance-audit",
+  "market_and_customer_compliance_audit",
   {
     title: "Market & Customer Compliance Audit",
     description: "Consumer protection and customer-facing compliance review",
@@ -33,7 +33,7 @@ server.registerPrompt(
         .describe("Payment provider: stripe|paypal|square|custom"),
     },
   },
-  async ({
+  ({
     jurisdiction,
     sector,
     businessModel,

@@ -2,7 +2,7 @@ import { server } from "../server.js";
 import { z } from "zod";
 
 server.registerPrompt(
-  "security-legal-alignment-check",
+  "security_legal_alignment_check",
   {
     title: "Security & Legal Alignment Check",
     description:
@@ -30,7 +30,7 @@ server.registerPrompt(
         .describe("Declared frameworks: ISO27001|NIST-CSF|SOC2|CIS|Custom"),
     },
   },
-  async ({ jurisdiction, sector, targetPath, securityFrameworks }) => ({
+  ({ jurisdiction, sector, targetPath, securityFrameworks }) => ({
     messages: [
       {
         role: "user",

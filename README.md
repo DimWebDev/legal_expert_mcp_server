@@ -9,15 +9,15 @@
 - [Core Benefits](#core-benefits)
 - [When To Use Which Prompt](#when-to-use-which-prompt)
 - [Prompts & Arguments (Adaptability Matrix)](#prompts--arguments-adaptability-matrix)
-  - [1. legal-landscape-discovery](#1-legal-landscape-discovery)
-  - [2. risk-analysis-framework](#2-risk-analysis-framework)
-  - [3. comprehensive-privacy-audit](#3-comprehensive-privacy-audit)
-  - [4. website-and-app-legal-disclosure-check](#4-website-and-app-legal-disclosure-check)
-  - [5. security-legal-alignment-check](#5-security-legal-alignment-check)
-  - [6. ai-ethics-and-compliance-scan](#6-ai-ethics-and-compliance-scan)
-  - [7. intellectual-property-and-oss-audit](#7-intellectual-property-and-oss-audit)
-  - [8. market-and-customer-compliance-audit](#8-market-and-customer-compliance-audit)
-  - [9. legal-expert-prompts-catalog](#9-legal-expert-prompts-catalog)
+  - [1. legal_landscape_discovery](#1-legal_landscape_discovery)
+  - [2. risk_analysis_framework](#2-risk_analysis_framework)
+  - [3. comprehensive_privacy_audit](#3-comprehensive_privacy_audit)
+  - [4. website_and_app_legal_disclosure_check](#4-website_and_app_legal_disclosure_check)
+  - [5. security_legal_alignment_check](#5-security_legal_alignment_check)
+  - [6. ai_ethics_and_compliance_scan](#6-ai_ethics_and_compliance_scan)
+  - [7. intellectual_property_and_oss_audit](#7-intellectual_property_and_oss_audit)
+  - [8. market_and_customer_compliance_audit](#8-market_and_customer_compliance_audit)
+  - [9. legal_expert_prompts_catalog](#9-legal_expert_prompts_catalog)
 - [How to Use Them](#how-to-use-them)
 - [Output Conventions](#output-conventions)
 - [How It Works (Architecture)](#how-it-works-architecture)
@@ -49,68 +49,68 @@ A modular, high-signal **Legal Expert MCP Server** that provides structured, met
 
 | Stage                               | Recommended Prompts                                                              |
 | ----------------------------------- | -------------------------------------------------------------------------------- |
-| Initial mapping / greenfield        | `legal-landscape-discovery`                                                      |
-| Data-heavy / personal data handling | `comprehensive-privacy-audit`                                                    |
-| AI / model artifacts appear         | `ai-ethics-and-compliance-scan`                                                  |
-| OSS / licensing maturity check      | `intellectual-property-and-oss-audit`                                            |
-| Commercial launch readiness         | `market-and-customer-compliance-audit`, `website-and-app-legal-disclosure-check` |
-| Security posture vs legal duties    | `security-legal-alignment-check`                                                 |
-| Consolidate multi‑audit outputs     | `risk-analysis-framework`                                                        |
-| Explore what's available            | `legal-expert-prompts-catalog`                                                   |
+| Initial mapping / greenfield        | `legal_landscape_discovery`                                                      |
+| Data-heavy / personal data handling | `comprehensive_privacy_audit`                                                    |
+| AI / model artifacts appear         | `ai_ethics_and_compliance_scan`                                                  |
+| OSS / licensing maturity check      | `intellectual_property_and_oss_audit`                                            |
+| Commercial launch readiness         | `market_and_customer_compliance_audit`, `website_and_app_legal_disclosure_check` |
+| Security posture vs legal duties    | `security_legal_alignment_check`                                                 |
+| Consolidate multi‑audit outputs     | `risk_analysis_framework`                                                        |
+| Explore what's available            | `legal_expert_prompts_catalog`                                                   |
 
 ## Prompts & Arguments (Adaptability Matrix)
 
 Below each prompt lists **Required** and **Optional** arguments you can pass to tailor scope and depth.
 
-### 1. legal-landscape-discovery
+### 1. legal_landscape_discovery
 
 - Required: `jurisdiction`, `sector`
 - Optional: `businessModel`, `targetPath`
 - Purpose: Baseline cross-domain legal framework & guardrail mapping for a product/company context.
 
-### 2. risk-analysis-framework
+### 2. risk_analysis_framework
 
 - Required: (none)
 - Optional: `jurisdiction`, `businessContext`, `riskDomains`, `findings`
 - Purpose: Normalize & prioritize risks (probability × impact) after audits or inferred signals.
 
-### 3. comprehensive-privacy-audit
+### 3. comprehensive_privacy_audit
 
 - Required: `jurisdiction`, `sector`
 - Optional: `regulations`, `targetPath`
 - Purpose: Data lifecycle mapping, obligations coverage, and risk-based privacy gap analysis.
 
-### 4. website-and-app-legal-disclosure-check
+### 4. website_and_app_legal_disclosure_check
 
 - Required: `jurisdiction`, `sector`
 - Optional: `targetPath`, `productType`
 - Purpose: Inventory, adequacy & gap analysis of user-facing legal/policy disclosures.
 
-### 5. security-legal-alignment-check
+### 5. security_legal_alignment_check
 
 - Required: `jurisdiction`, `sector`
 - Optional: `targetPath`, `securityFrameworks`
 - Purpose: Map implemented security controls to legal/regulatory expectation areas.
 
-### 6. ai-ethics-and-compliance-scan
+### 6. ai_ethics_and_compliance_scan
 
 - Required: `jurisdiction`, `sector`
 - Optional: `aiModelType`, `targetPath`, `riskLevel`
 - Purpose: AI/ML system classification, governance signals, risk tiering & mitigation direction.
 
-### 7. intellectual-property-and-oss-audit
+### 7. intellectual_property_and_oss_audit
 
 - Required: `jurisdiction`
 - Optional: `targetPath`, `codeOwnershipModel`
 - Purpose: Ownership chain integrity, OSS license classification, infringement & provenance risk.
 
-### 8. market-and-customer-compliance-audit
+### 8. market_and_customer_compliance_audit
 
 - Required: `jurisdiction`, `sector`
 - Optional: `businessModel`, `targetPath`, `paymentProvider`
 - Purpose: Consumer-facing lifecycle fairness, pricing clarity, marketing representation risk.
 
-### 9. legal-expert-prompts-catalog
+### 9. legal_expert_prompts_catalog
 
 - Required: (none)
 - Optional: `category`
@@ -118,7 +118,7 @@ Below each prompt lists **Required** and **Optional** arguments you can pass to 
 
 ## How to Use Them
 
-In Claude Code, VS Code, and Cursor, these prompts are available as slash commands. When you invoke a prompt using its slash command (e.g., `/legal-landscape-discovery`), the system will interactively prompt you to provide the required and optional arguments for that prompt.
+In Claude Code, VS Code, and Cursor, these prompts are available as slash commands. When you invoke a prompt using its slash command (e.g., `/mcp__legal_expert__legal_landscape_discovery`), the system will interactively prompt you to provide the required and optional arguments for that prompt.
 
 **Claude Code** enforces each prompt's **argsSchema** by interactively collecting required arguments before execution. When you type a slash command for an MCP prompt that has mandatory parameters, Claude Code will:
 
@@ -130,12 +130,12 @@ In Claude Code, VS Code, and Cursor, these prompts are available as slash comman
 
 For example:
 
-- `/legal-landscape-discovery` prompts for `jurisdiction` and `sector` (required), optionally `businessModel` and `targetPath`.
-- `/comprehensive-privacy-audit` prompts for `jurisdiction` and `sector` (required), optionally `regulations` and `targetPath`.
-- `/website-and-app-legal-disclosure-check` prompts for `jurisdiction` and `sector` (required), optionally `targetPath` and `productType`.
-- `/ai-ethics-and-compliance-scan` prompts for `jurisdiction` and `sector` (required), optionally `aiModelType`, `targetPath`, `riskLevel`.
-- `/security-legal-alignment-check` prompts for `jurisdiction` and `sector` (required), optionally `securityFrameworks`, `targetPath`.
-- `/market-and-customer-compliance-audit` prompts for `jurisdiction` and `sector` (required), optionally `businessModel`, `paymentProvider`, `targetPath`.
+- `/mcp__legal_expert__legal_landscape_discovery` prompts for `jurisdiction` and `sector` (required), optionally `businessModel` and `targetPath`.
+- `/mcp__legal_expert__comprehensive_privacy_audit` prompts for `jurisdiction` and `sector` (required), optionally `regulations` and `targetPath`.
+- `/mcp__legal_expert__website_and_app_legal_disclosure_check` prompts for `jurisdiction` and `sector` (required), optionally `targetPath` and `productType`.
+- `/mcp__legal_expert__ai_ethics_and_compliance_scan` prompts for `jurisdiction` and `sector` (required), optionally `aiModelType`, `targetPath`, `riskLevel`.
+- `/mcp__legal_expert__security_legal_alignment_check` prompts for `jurisdiction` and `sector` (required), optionally `securityFrameworks`, `targetPath`.
+- `/mcp__legal_expert__market_and_customer_compliance_audit` prompts for `jurisdiction` and `sector` (required), optionally `businessModel`, `paymentProvider`, `targetPath`.
 
 This interactive prompting ensures that each analysis is tailored to your specific legal, jurisdictional, and product context across all supported MCP clients.
 
@@ -192,15 +192,15 @@ Add an entry similar to (example pseudo-config):
 Then invoke a tool/prompt (client UX varies). Example invocation conceptually:
 
 ```
-prompt: ai-ethics-and-compliance-scan
+prompt: ai_ethics_and_compliance_scan
 args: { "jurisdiction": "EU", "aiModelType": "LLM" }
 ```
 
 ## Example Workflow
 
-1. Run `legal-landscape-discovery` (jurisdiction + sector) for baseline context.
+1. Run `legal_landscape_discovery` (jurisdiction + sector) for baseline context.
 2. Run domain audits: privacy → IP/OSS → disclosures → security.
-3. Consolidate into `risk-analysis-framework` (feed findings as comma-separated seed if desired).
+3. Consolidate into `risk_analysis_framework` (feed findings as comma-separated seed if desired).
 4. Re-run selective audits after remediation to track maturity deltas.
 
 ## Adaptability Patterns
