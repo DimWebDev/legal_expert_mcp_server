@@ -191,7 +191,9 @@ Based on my research of the official Anthropic documentation and various setup g
 
 ### Claude Code
 
-To add the Legal Expert MCP Server to Claude Code, use the command line interface:
+> [!NOTE] > **MCP prompts are temporarily not supported in Claude Code.** While the server can be installed and connected successfully, the prompt slash commands are not currently working as expected. For full functionality, please use **VS Code** or **Cursor** instead.
+
+To add the Legal Expert MCP Server to Claude Code (connection only):
 
 ```bash
 # Basic installation using npx inside a directory
