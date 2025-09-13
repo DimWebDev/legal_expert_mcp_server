@@ -82,7 +82,7 @@ Below each prompt lists **Required** and **Optional** arguments you can pass to 
 
 ### 4. website-and-app-legal-disclosure-check
 
-- Required: `jurisdiction`
+- Required: `jurisdiction`, `sector`
 - Optional: `targetPath`, `productType`
 - Purpose: Inventory, adequacy & gap analysis of user-facing legal/policy disclosures.
 
@@ -132,6 +132,7 @@ For example:
 
 - `/legal-landscape-discovery` prompts for `jurisdiction` and `sector` (required), optionally `businessModel` and `targetPath`.
 - `/comprehensive-privacy-audit` prompts for `jurisdiction` and `sector` (required), optionally `regulations` and `targetPath`.
+- `/website-and-app-legal-disclosure-check` prompts for `jurisdiction` and `sector` (required), optionally `targetPath` and `productType`.
 - `/ai-ethics-and-compliance-scan` prompts for `jurisdiction` and `sector` (required), optionally `aiModelType`, `targetPath`, `riskLevel`.
 - `/security-legal-alignment-check` prompts for `jurisdiction` and `sector` (required), optionally `securityFrameworks`, `targetPath`.
 - `/market-and-customer-compliance-audit` prompts for `jurisdiction` and `sector` (required), optionally `businessModel`, `paymentProvider`, `targetPath`.

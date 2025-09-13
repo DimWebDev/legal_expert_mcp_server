@@ -31,7 +31,7 @@ server.registerPrompt(
   - Optional: regulations, targetPath
 
 - **website-and-app-legal-disclosure-check**: Required disclosures inventory & gaps
-  - Required: jurisdiction
+  - Required: jurisdiction, sector
   - Optional: targetPath, productType
 
 - **security-legal-alignment-check**: Security control vs legal obligation mapping
