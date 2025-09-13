@@ -21,8 +21,6 @@
 - [How to Use Them](#how-to-use-them)
 - [Output Conventions](#output-conventions)
 - [How It Works (Architecture)](#how-it-works-architecture)
-- [Quick Start Local MCP Server](#quick-start)
-  - [Use With an MCP Client](#use-with-an-mcp-client)
 - [Example Workflow](#example-workflow)
 - [Adaptability Patterns](#adaptability-patterns)
 - [Reliability & Limitations](#reliability--limitations)
@@ -154,50 +152,6 @@ This interactive prompting ensures that each analysis is tailored to your specif
 - Prompts produce structured `messages` consumed by the connected LLM through an MCP-compatible client
 - Adaptability is achieved by parameterizing jurisdiction, scope, model type, risk domains, ownership model, etc.—you tailor insights without editing code
 
-## Quick Start
-
-```bash
-# Clone
-git clone https://github.com/yourusername/legal-expert-mcp-server.git
-cd legal-expert-mcp-server
-
-# Install deps
-npm install
-
-# Build
-npm run build
-
-# Run (stdio mode)
-node dist/index.js
-# or (if installed globally or via npx)
-npx legal-expert-mcp-server
-```
-
-### Use With an MCP Client
-
-Add an entry similar to (example pseudo-config):
-
-```jsonc
-{
-  "mcpServers": {
-    "legal-expert": {
-      "command": "node",
-      "args": ["/absolute/path/to/legal_expert_mcp_server/dist/index.js"],
-      "env": {},
-    },
-  },
-}
-```
-
-Then invoke a tool/prompt (client UX varies). Example invocation conceptually:
-
-```
-prompt: ai_ethics_and_compliance_scan
-args: { "jurisdiction": "EU", "aiModelType": "LLM" }
-```
-
-## Example Workflow
-
 1. Run `legal_landscape_discovery` (jurisdiction + sector) for baseline context.
 2. Run domain audits: privacy → IP/OSS → disclosures → security.
 3. Consolidate into `risk_analysis_framework` (feed findings as comma-separated seed if desired).
@@ -241,11 +195,10 @@ To add the Legal Expert MCP Server to Claude Code, use the command line interfac
 
 ```bash
 # Basic installation using npx inside a directory
-claude mcp add legal-expert npx legal-expert-mcp-server
-
+claude mcp add legal-expert npx @dimwebdev/legal-expert-mcp-server
 
 # For user-wide availability
-claude mcp add legal-expert --scope user npx  legal-expert-mcp-server
+claude mcp add legal-expert --scope user npx @dimwebdev/legal-expert-mcp-server
 ```
 
 ### VS Code
@@ -261,7 +214,7 @@ VS Code supports MCP servers through GitHub Copilot's agent mode:
        "legal-expert": {
          "type": "stdio",
          "command": "npx",
-         "args": ["-y", "legal-expert-mcp-server"]
+         "args": ["-y", "@dimwebdev/legal-expert-mcp-server"]
        }
      }
    }
@@ -274,6 +227,7 @@ Cursor provides multiple configuration options for MCP servers:
 #### Option 1: Using Cursor Settings UI
 
 1. **Open Cursor Settings**
+
    - Use `Ctrl+Shift+P` and search for "cursor settings"
    - Navigate to **Tools & Integrations** → **MCP**
    - Click **"+ Add New MCP Server"** or **"New MCP Server"**
@@ -281,7 +235,7 @@ Cursor provides multiple configuration options for MCP servers:
 2. **Configure Server**
    - **Name**: `legal-expert`
    - **Command**: `npx`
-   - **Args**: `["-y", "legal-expert-mcp-server"]`
+   - **Args**: `["-y", "@dimwebdev/legal-expert-mcp-server"]`
 
 #### Option 2: Manual JSON Configuration
 
@@ -295,7 +249,7 @@ Create `.cursor/mcp.json` in your project root:
   "mcpServers": {
     "legal-expert": {
       "command": "npx",
-      "args": ["-y", "legal-expert-mcp-server"],
+      "args": ["-y", "@dimwebdev/legal-expert-mcp-server"],
       "env": {}
     }
   }
@@ -310,7 +264,7 @@ Create `~/.cursor/mcp.json` in your home directory with the same configuration.
 If available as an npm package, you can use the automated setup:[7]
 
 ```bash
-npx legal-expert-mcp-server setup --client cursor
+npx @dimwebdev/legal-expert-mcp-server setup --client cursor
 ```
 
 ### Verification

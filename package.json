@@ -1,5 +1,5 @@
 {
-  "name": "legal-expert-mcp-server",
+  "name": "@dimwebdev/legal-expert-mcp-server",
   "version": "1.0.4",
   "description": "MCP server providing elite-level legal expert prompts for comprehensive compliance analysis",
   "keywords": [
