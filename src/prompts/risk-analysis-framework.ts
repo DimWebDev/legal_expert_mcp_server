@@ -39,7 +39,7 @@ server.registerPrompt(
           text: `You are to perform a structured legal/compliance risk analysis and prioritization. Use an evidence-based approach.
 
 CONTEXT INPUTS:
-- Jurisdiction Focus: ${jurisdiction || "multi-jurisdiction"}
+- Jurisdiction Focus: ${jurisdiction || "multi-jurisdiction"} (Note: Include both national laws and inherited supranational frameworks applicable to this jurisdiction)
 - Business Context: ${businessContext || "all stages"}
 - Risk Domains Scope: ${
             riskDomains ||
@@ -60,6 +60,7 @@ OPTIONAL PRE-SCAN (ONLY IF NO PRIOR AUDIT OUTPUTS PROVIDED):
 YOUR OBJECTIVES:
 1. You should synthesize risk items across included domains.
 2. You should assign probability and impact ratings using consistent criteria.
+• Include applicable supra- and sub-national frameworks inherited by the selected jurisdiction (e.g., EU→member state; US federal→state; CA federal→provincial).
 3. You should categorize risks (Compliance / Operational / Reputational / Financial / Strategic).
 4. You should prioritize using a matrix with rationale and indicate mitigation direction (Accept / Mitigate / Transfer / Avoid / Monitor).
 5. You should provide a monitoring and escalation framework.
@@ -71,6 +72,7 @@ PHASE 1: RISK IDENTIFICATION & CATEGORIZATION
 
 PHASE 2: PROBABILITY ASSESSMENT
 • You should estimate likelihood using qualitative scale (High | Medium | Low) referencing: enforcement trends, exposure surface, control maturity, external volatility.
+• If multiple jurisdictions are implicated, synthesize common denominators, highlight stricter-rule defaults, and flag conflicts requiring jurisdiction-specific handling.
 • You should document rationale for each probability rating.
 
 PHASE 3: IMPACT ASSESSMENT
@@ -100,6 +102,7 @@ Generate this report and save it in legal_docs/risk-analysis-report-{timestamp}.
   - You should approximate ranges or symbolic scaling (e.g., Low < Medium < High, or relative multipliers) – no speculative currency unless grounded.
 4. Mitigation Strategy Roadmap
   - You should group actions by treatment category with expected effect.
+  - Offer two tracks where feasible: low-effort/quick-win path and comprehensive/structural path.
 5. Monitoring & Escalation Framework
   - You should define: indicator | threshold | review frequency | escalation path.
 6. Assumptions & Limitations
@@ -108,7 +111,10 @@ Generate this report and save it in legal_docs/risk-analysis-report-{timestamp}.
 STYLE & SAFETY:
 • You should keep entries succinct and structured.
 • You should provide elite-level legal expert risk analysis with comprehensive legal expertise and professional recommendations.
-        `},
+• Label each finding with confidence: Observed (evidence cited) or Inferred (assumption noted).
+• Provide elite-level legal expert analysis and professional recommendations; do not imply an attorney–client relationship.
+        `,
+        },
       },
     ],
   })

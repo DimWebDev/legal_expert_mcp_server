@@ -34,7 +34,7 @@ server.registerPrompt(
           text: `You are to perform a website & app legal disclosure audit for the digital product. You must inventory required disclosures, evaluate adequacy, identify risks.
 
 CONTEXT INPUTS:
-- Jurisdiction: ${jurisdiction}
+- Jurisdiction: ${jurisdiction} (Note: Include both national disclosure requirements and inherited supranational frameworks applicable to this jurisdiction)
 - Target Path: ${targetPath || "workspace root"}
 - Product Type: ${productType || "infer from repository structure"}
 
@@ -52,6 +52,7 @@ PRE-SCAN (RAPID CONTEXT PRIMING YOU MUST PERFORM BEFORE PHASE 1):
 YOUR OBJECTIVES:
 1. You should discover existing legal/policy documents and disclosure surfaces.
 2. You should evaluate presence and completeness of mandatory and best-practice disclosures for ${jurisdiction}.
+• Include applicable supra- and sub-national frameworks inherited by the selected jurisdiction (e.g., EU→member state; US federal→state; CA federal→provincial).
 3. You should identify placement, consistency, and versioning gaps.
 4. You should surface risk indicators (misleading claims, missing rights mechanisms, dark patterns).
 5. You should propose a standardized disclosure architecture and remediation sequencing.
@@ -64,6 +65,8 @@ PHASE 1: DISCLOSURE SURFACE DISCOVERY
 
 PHASE 2: REQUIREMENT COVERAGE EVALUATION
 • You should assess privacy policy elements: data types, purposes, sharing, rights, retention, transfers, contact, complaints recourse.
+• If multiple jurisdictions are implicated, synthesize common denominators, highlight stricter-rule defaults, and flag conflicts requiring jurisdiction-specific handling.
+• Consider regional/treaty overlays (e.g., EEA/EFTA, Council of Europe, CPTPP) where applicable.
 • You should assess terms of service enforceability: acceptance mechanism (clickwrap vs browse), modification clause clarity, governing law, dispute method.
 • You should evaluate cookie / tracking notice: banner existence, preference management, consent logging reference, categorization of cookies.
 • You should check jurisdiction-specific identity/imprint requirements (e.g., EU/DE mandatory business information blocks).
@@ -101,6 +104,7 @@ Generate this report and save it in legal_docs/website-app-disclosure-check-repo
   - You should provide structured entries: issue | evidence | potential impact | risk level | remediation direction.
 4. Remediation Blueprint
   - You should group quick wins vs structural changes vs governance improvements.
+  - Offer two tracks where feasible: low-effort/quick-win path and comprehensive/structural path.
 5. Standardized Architecture Proposal
   - You should outline placement hierarchy + versioning + governance cadence.
 6. Assumptions & Limitations
@@ -109,7 +113,10 @@ Generate this report and save it in legal_docs/website-app-disclosure-check-repo
 STYLE & SAFETY:
 • You should provide elite-level legal expert analysis with comprehensive disclosure law expertise and professional legal recommendations.
 • You should avoid definitive enforceability judgments—frame as potential risk.
-        `},
+• Label each finding with confidence: Observed (evidence cited) or Inferred (assumption noted).
+• Provide elite-level legal expert analysis and professional recommendations; do not imply an attorney–client relationship.
+        `,
+        },
       },
     ],
   })

@@ -32,8 +32,9 @@ server.registerPrompt(
           text: `You are to perform a comprehensive privacy compliance audit. You must follow the prescribed phased methodology, remain evidence-based.
 
 CONTEXT INPUTS:
-- Jurisdiction: ${jurisdiction}
+- Jurisdiction: ${jurisdiction} (Note: Consider both national laws and inherited supranational frameworks applicable to this jurisdiction)
 - Declared / Applicable Regulations: ${regulations || "infer from jurisdiction"}
+  - When regulations are explicitly provided, treat them as the primary scope; still include inherited supra-/sub-national obligations that apply.
 - Target Path: ${targetPath || "workspace root"}
 
 PRE-SCAN (RAPID CONTEXT PRIMING YOU MUST PERFORM BEFORE PHASE 1):
@@ -51,6 +52,7 @@ PRE-SCAN (RAPID CONTEXT PRIMING YOU MUST PERFORM BEFORE PHASE 1):
 YOUR OBJECTIVES:
 1. You should discover and map personal data lifecycle (collection → processing → storage → transfer → retention → deletion).
 2. You should identify applicable regulatory obligations for ${jurisdiction} and the declared regulations set.
+• Include applicable supra- and sub-national frameworks inherited by the selected jurisdiction (e.g., EU→member state; US federal→state; CA federal→provincial).
 3. You should evaluate implementation of consent, lawful bases, rights handling, transparency, security, and retention.
 4. You should classify gaps by risk level (Critical/High/Medium/Low) with concise rationale.
 5. You should produce a structured markdown report in the mandated section order.
@@ -65,6 +67,8 @@ PHASE 1: DATA DISCOVERY & MAPPING (YOU MUST EXECUTE)
 
 PHASE 2: OBLIGATIONS & CONTROL ANALYSIS
 • You should enumerate key obligations relevant to ${jurisdiction} (e.g., GDPR core principles, CCPA consumer rights, UK-GDPR continuity, LGPD overlaps).
+• If multiple jurisdictions are implicated, synthesize common denominators, highlight stricter-rule defaults, and flag conflicts requiring jurisdiction-specific handling.
+• Consider regional/treaty overlays (e.g., EEA/EFTA, Council of Europe, CPTPP) where applicable.
 • You should determine lawful bases used or implied (consent, contract, legitimate interests, legal obligation, vital interests, public task) and note unclear bases.
 • You should check consent flows (granularity, revocation path, logging) and rights handling pathways (DSAR intake, verification, fulfillment steps).
 • You should examine special category / sensitive data indicators and flag DPIA (impact assessment) trigger candidates.
@@ -103,6 +107,7 @@ Generate this report and save it in legal_docs/privacy-compliance-audit-report-{
   - You should provide structured entries with risk level and rationale.
 6. Remediation Roadmap
   - You should allocate actions to Immediate / Near-Term / Strategic with outcome focus.
+  - Offer two tracks where feasible: low-effort/quick-win path and comprehensive/structural path.
 7. Assumptions & Limitations
   - You should enumerate missing evidence areas and inferred interpretations.
 
@@ -110,7 +115,10 @@ STYLE & SAFETY:
 • You should provide elite-level legal expert analysis with professional legal terminology and comprehensive privacy law expertise.
 • You should not quote statutes unless inference is strongly grounded.
 • You should avoid definitive legal conclusions; frame as expert analysis and recommendations.
-        `},
+• Label each finding with confidence: Observed (evidence cited) or Inferred (assumption noted).
+• Provide elite-level legal expert analysis and professional recommendations; do not imply an attorney–client relationship.
+        `,
+        },
       },
     ],
   })

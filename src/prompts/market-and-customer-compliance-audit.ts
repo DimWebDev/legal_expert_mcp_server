@@ -35,7 +35,7 @@ server.registerPrompt(
           text: `You are to perform a market & customer compliance audit. You must assess customer-facing flows, marketing representations, subscription mechanics, and billing practices for alignment with consumer protection principles in ${jurisdiction}.
 
 CONTEXT INPUTS:
-- Jurisdiction: ${jurisdiction}
+- Jurisdiction: ${jurisdiction} (Note: Include both national consumer laws and inherited supranational frameworks applicable to this jurisdiction)
 - Business Model: ${businessModel || "infer from repository signals"}
 - Target Path: ${targetPath || "workspace root"}
 - Payment Provider: ${paymentProvider || "infer or list all detected"}
@@ -54,6 +54,7 @@ PRE-SCAN (RAPID CONTEXT PRIMING YOU MUST PERFORM BEFORE PHASE 1):
 YOUR OBJECTIVES:
 1. You should map the end-to-end customer lifecycle: acquisition → signup → engagement → billing → cancellation → refund / dispute.
 2. You should evaluate transparency, clarity, and fairness of pricing, renewals, and cancellation.
+• Include applicable supra- and sub-national frameworks inherited by the selected jurisdiction (e.g., EU→member state; US federal→state; CA federal→provincial).
 3. You should analyze marketing and claims for potential misleading or unsubstantiated representations.
 4. You should review payment and billing structures for compliance signals and risk points.
 5. You should classify gaps by risk (Critical/High/Medium/Low) and propose remediation direction.
@@ -66,6 +67,8 @@ PHASE 1: CUSTOMER-FACING DISCOVERY
 
 PHASE 2: CONSUMER PROTECTION CORE REVIEW
 • You should analyze clarity of key commercial terms (price, frequency, renewal, refund eligibility, restrictions).
+• If multiple jurisdictions are implicated, synthesize common denominators, highlight stricter-rule defaults, and flag conflicts requiring jurisdiction-specific handling.
+• Consider regional/treaty overlays (e.g., EEA/EFTA, Council of Europe, CPTPP) where applicable.
 • You should assess cancellation UX: is it as easy as signup (parity principle)?
 • You should identify cooling-off or withdrawal right references (if applicable to ${jurisdiction}).
 • You should evaluate fee / surcharge disclosure timing (no hidden or back-loaded fees).
@@ -104,13 +107,17 @@ Generate this report and save it in legal_docs/market-customer-compliance-audit-
   - You should list: area | observed issue | potential consequence | risk level.
 5. Remediation Action Plan
   - You should group actions: Immediate | Near-Term | Structural.
+  - Offer two tracks where feasible: low-effort/quick-win path and comprehensive/structural path.
 6. Assumptions & Limitations
   - You should list unavailable evidence or inferred flows.
 
 STYLE & SAFETY:
 • You should provide elite-level legal expert analysis with professional consumer protection law expertise and actionable recommendations.
 • You should avoid normative legal instructions—focus on improvements and alignment.
-        `},
+• Label each finding with confidence: Observed (evidence cited) or Inferred (assumption noted).
+• Provide elite-level legal expert analysis and professional recommendations; do not imply an attorney–client relationship.
+        `,
+        },
       },
     ],
   })

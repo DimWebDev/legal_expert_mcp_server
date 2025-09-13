@@ -36,7 +36,7 @@ server.registerPrompt(
           text: `You are to perform an AI ethics and regulatory compliance scan. You must follow the structured methodology below and produce the specified output strictly in Markdown.
 
 CONTEXT INPUTS YOU SHOULD USE:
-- Jurisdiction: ${jurisdiction}
+- Jurisdiction: ${jurisdiction} (Note: Include both national regulations and inherited supranational frameworks applicable to this jurisdiction)
 - AI Model Type (if detectable): ${
             aiModelType || "infer from repository artifacts"
           }
@@ -60,6 +60,7 @@ PRE-SCAN (RAPID CONTEXT PRIMING YOU MUST PERFORM BEFORE PHASE 1):
 YOUR OBJECTIVES:
 1. You should discover AI/ML system components and classify them by risk.
 2. You should map applicable regulatory / ethical frameworks for ${jurisdiction}.
+• Include applicable supra- and sub-national frameworks inherited by the selected jurisdiction (e.g., EU→member state; US federal→state; CA federal→provincial).
 3. You should analyze bias, fairness, explainability, and governance signals.
 4. You should identify legal/ethical risk vectors and categorize them (Critical/High/Medium/Low).
 5. You should produce a structured, reproducible report (see Deliverables) with clear sections.
@@ -75,6 +76,8 @@ PHASE 1: SYSTEM DISCOVERY & CLASSIFICATION
 
 PHASE 2: REGULATORY & GOVERNANCE MAPPING
 • You should identify applicable frameworks for ${jurisdiction} (e.g., EU AI Act, GDPR Art. 22, FTC guidance, sectoral rules, emerging AI policies).
+• If multiple jurisdictions are implicated, synthesize common denominators, highlight stricter-rule defaults, and flag conflicts requiring jurisdiction-specific handling.
+• Consider regional/treaty overlays (e.g., EEA/EFTA, Council of Europe, CPTPP) where applicable.
 • You should map algorithmic accountability obligations (documentation, traceability, logging, conformity processes).
 • You should note sector overlays (finance, health, employment, education) if inferred from code patterns or filenames.
 • You should check automated decision-making constraints (e.g., GDPR Art.22 triggers) and indicate whether conditions appear met.
@@ -115,6 +118,7 @@ Generate this report and save it in legal_docs/ai-ethics-compliance-report-{time
   - You should provide: risk | category | evidence | likelihood | impact | level | mitigation direction.
 7. Mitigation Roadmap
   - You should group actions: Immediate (0-30d) | Near-Term (30-90d) | Strategic (90d+).
+  - Offer two tracks where feasible: low-effort/quick-win path and comprehensive/structural path.
 8. Assumptions & Limitations
   - You should explicitly list what was inferred vs. observed.
 
@@ -123,11 +127,14 @@ STYLE & SAFETY REQUIREMENTS:
 • You should avoid definitive legal conclusions; use framing like "indicates", "suggests", "may trigger".
 • You should flag missing evidence rather than speculating.
 • You should not fabricate regulatory citations—only include if pattern or context supports them.
+• Label each finding with confidence: Observed (evidence cited) or Inferred (assumption noted).
+• Provide elite-level legal expert analysis and professional recommendations; do not imply an attorney–client relationship.
 
 FINAL OUTPUT FORMAT:
 You should produce valid Markdown with top-level headings (##) for each deliverable section.
 You should not include code execution unless analyzing discovered scripts.
-        `},
+        `,
+        },
       },
     ],
   })

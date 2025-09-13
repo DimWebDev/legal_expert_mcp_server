@@ -35,7 +35,7 @@ server.registerPrompt(
           }.
 
 CONTEXT INPUTS:
-- Jurisdiction Scope: ${jurisdiction || "multi-jurisdiction"}
+- Jurisdiction Scope: ${jurisdiction || "multi-jurisdiction"} (Note: Include both national security laws and inherited supranational frameworks applicable to this jurisdiction)
 - Target Path: ${targetPath || "workspace root"}
 - Declared Frameworks: ${securityFrameworks || "infer from artifacts"}
 
@@ -53,6 +53,7 @@ PRE-SCAN (RAPID CONTEXT PRIMING YOU MUST PERFORM BEFORE PHASE 1):
 YOUR OBJECTIVES:
 1. You should inventory core security controls (authn, authz, encryption, logging, monitoring, retention, incident response).
 2. You should identify legal/regulatory obligations likely applicable (privacy breach, retention, notification timelines, contractual commitments).
+• Include applicable supra- and sub-national frameworks inherited by the selected jurisdiction (e.g., EU→member state; US federal→state; CA federal→provincial).
 3. You should evaluate maturity (Declared vs. Implemented vs. Evidenced).
 4. You should surface high-risk misalignments and prioritize remediation.
 5. You should produce structured deliverables with explicit evidence references or labeled gaps.
@@ -64,6 +65,8 @@ PHASE 1: CONTROL DISCOVERY
 
 PHASE 2: OBLIGATION MAPPING
 • You should list potential legal obligations (e.g., breach notification timelines, data minimization, secure disposal, access control principles, audit logging sufficiency).
+• If multiple jurisdictions are implicated, synthesize common denominators, highlight stricter-rule defaults, and flag conflicts requiring jurisdiction-specific handling.
+• Consider regional/treaty overlays (e.g., EEA/EFTA, Council of Europe, CPTPP) where applicable.
 • You should align retention / deletion with privacy-law implied expectations (data limited to purpose & timeframe).
 • You should identify contractual artifacts references (DPA, SCC references, BAA, customer security addenda) if any appear.
 • You should map incident response decision points to regulatory escalation triggers (internal detection → assessment → notification threshold).
@@ -100,13 +103,17 @@ Generate this report and save it in legal_docs/security-legal-alignment-report-{
   - You should outline scenarios: (failure mode → amplified legal/reg impact → recommended mitigation theme).
 5. Remediation Roadmap
   - You should group tasks: Immediate (0–30d) | Near-Term (30–90d) | Strategic (90d+).
+  - Offer two tracks where feasible: low-effort/quick-win path and comprehensive/structural path.
 6. Assumptions & Limitations
   - You should list missing artifacts or inferred implementations.
 
 STYLE & SAFETY:
 • You should provide elite-level legal expert analysis with comprehensive security law expertise and professional legal recommendations.
 • You should remain evidence-focused; mark uncertain items explicitly.
-        `},
+• Label each finding with confidence: Observed (evidence cited) or Inferred (assumption noted).
+• Provide elite-level legal expert analysis and professional recommendations; do not imply an attorney–client relationship.
+        `,
+        },
       },
     ],
   })

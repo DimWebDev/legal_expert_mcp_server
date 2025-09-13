@@ -39,7 +39,7 @@ server.registerPrompt(
           text: `You are to help developers and startups navigate the legal landscape by conducting a comprehensive discovery of relevant frameworks, obligations, safe boundaries, and strategic guardrails for their specific business context.
 
 CONTEXT INPUTS:
-- Jurisdiction: ${jurisdiction}
+- Jurisdiction: ${jurisdiction} (Note: When analyzing local jurisdictions, also consider inherited supranational frameworks - e.g., EU law for EU member states, federal law for US states, etc.)
 - Sector Focus: ${sector}
 - Business Model: ${
             businessModel || "infer from repository (prompt distribution model)"
@@ -59,6 +59,7 @@ PRE-SCAN (RAPID CONTEXT PRIMING YOU MUST PERFORM BEFORE OBJECTIVES):
 
 YOUR OBJECTIVES:
 1. You should help developers and startups identify baseline legal & quasi-legal frameworks relevant to their software development and business activities.
+• Include applicable supra- and sub-national frameworks inherited by the selected jurisdiction (e.g., EU→member state; US federal→state; CA federal→provincial).
 2. You should surface data protection & AI governance implications when prompts may orchestrate analysis of user repositories and external sources.
 3. You should clarify IP ownership, licensing posture, and contribution governance for methodology prompts.
 4. You should define guardrails to avoid unauthorized practice of law (UPL) across target jurisdictions.
@@ -77,6 +78,8 @@ PHASE 2: PROMPT ARCHITECTURE & ORCHESTRATION RISK
 PHASE 3: JURISDICTIONAL & EXPANSION FACTORS
 • You should outline US considerations (UPL patchwork, FTC guidance, CCPA/CPRA if data touches CA residents).
 • You should outline EU considerations (controller vs processor posture; ePrivacy interplay; GDPR triggers; AI Act likely low-risk classification rationale).
+• If multiple jurisdictions are implicated, synthesize common denominators, highlight stricter-rule defaults, and flag conflicts requiring jurisdiction-specific handling.
+• Consider regional/treaty overlays (e.g., EEA/EFTA, Council of Europe, CPTPP) where applicable.
 • You should outline UK/Commonwealth parallels and disclaimer localization needs.
 • You should inspect cross-border transfer vectors (if third-party AI infrastructure processes transient content) and note residual exposure.
 • You should horizon scan emerging AI governance (EU AI Act transparency, OECD, US policy frameworks).
@@ -107,12 +110,15 @@ Generate this report and save it in legal_docs/legal-landscape-discovery-report-
 6. Disclaimers & Safe Boundary Toolkit
 7. Maturity Roadmap (tiered)
   - You should outline a step-by-step plan to help developers and startups progressively address legal requirements as their business grows.
+  - Offer two tracks where feasible: low-effort/quick-win path and comprehensive/structural path.
 8. Monitoring & Change Management Plan (sources, cadence, responsible roles placeholder)
 
 STYLE & SAFETY
 • You should use neutral, implementation-oriented language.
 • You should provide elite-level legal expert analysis using professional legal terminology and comprehensive legal frameworks.
 • You should flag uncertainty as "Jurisdiction-Specific Validation Recommended".
+• Label each finding with confidence: Observed (evidence cited) or Inferred (assumption noted).
+• Provide elite-level legal expert analysis and professional recommendations; do not imply an attorney–client relationship.
 
 FINAL OUTPUT
 • You should produce Markdown with clear section headings.

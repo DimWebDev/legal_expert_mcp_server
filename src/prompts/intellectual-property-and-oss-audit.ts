@@ -30,7 +30,7 @@ server.registerPrompt(
           text: `You are to perform an intellectual property and open-source software compliance audit. You must provide elite-level legal expert analysis and follow the structured phases below.
 
 CONTEXT INPUTS:
-- Jurisdiction: ${jurisdiction}
+- Jurisdiction: ${jurisdiction} (Note: Include both national IP laws and inherited supranational frameworks applicable to this jurisdiction)
 - Target Path: ${targetPath || "workspace root"}
 - Code Ownership Model: ${codeOwnershipModel || "infer from repository signals"}
 
@@ -49,6 +49,7 @@ PRE-SCAN (RAPID CONTEXT PRIMING YOU MUST PERFORM BEFORE PHASE 1):
 YOUR OBJECTIVES:
 1. You should inventory proprietary, third-party, and AI-generated code artifacts.
 2. You should enumerate and classify all dependency licenses (direct + transitive where detectable).
+• Include applicable supra- and sub-national frameworks inherited by the selected jurisdiction (e.g., EU→member state; US federal→state; CA federal→provincial).
 3. You should evaluate ownership chain integrity (contributors, assignments, provenance).
 4. You should surface infringement and enforcement risk vectors (copyright, trademark, patent, trade secret).
 5. You should prioritize remediation with rationale and categorize actions by urgency.
@@ -105,7 +106,8 @@ Generate this report and save it in legal_docs/ip-oss-audit-report-{timestamp}.m
 STYLE & SAFETY:
 • You should provide elite-level legal expert analysis with comprehensive legal reasoning and actionable recommendations.
 • You should not fabricate license identifiers; mark as "Unknown" if not discoverable.
-        `},
+        `,
+        },
       },
     ],
   })
