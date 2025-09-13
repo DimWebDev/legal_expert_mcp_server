@@ -31,7 +31,13 @@ server.registerPrompt(
         .describe("Payment provider: stripe|paypal|square|custom"),
     },
   },
-  async ({ jurisdiction, sector, businessModel, targetPath, paymentProvider }) => ({
+  async ({
+    jurisdiction,
+    sector,
+    businessModel,
+    targetPath,
+    paymentProvider,
+  }) => ({
     messages: [
       {
         role: "user",

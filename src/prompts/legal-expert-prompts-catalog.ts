@@ -54,7 +54,8 @@ server.registerPrompt(
 - All prompts generate timestamped reports saved to legal_docs/ directory
 - Start with **legal-landscape-discovery** for initial mapping
 - Use **risk-analysis-framework** to consolidate findings from other audits
-        `},
+        `,
+        },
       },
     ],
   })

@@ -182,9 +182,9 @@ Add an entry similar to (example pseudo-config):
     "legal-expert": {
       "command": "node",
       "args": ["/absolute/path/to/legal_expert_mcp_server/dist/index.js"],
-      "env": {}
-    }
-  }
+      "env": {},
+    },
+  },
 }
 ```
 
@@ -273,7 +273,6 @@ Cursor provides multiple configuration options for MCP servers:
 #### Option 1: Using Cursor Settings UI
 
 1. **Open Cursor Settings**
-
    - Use `Ctrl+Shift+P` and search for "cursor settings"
    - Navigate to **Tools & Integrations** → **MCP**
    - Click **"+ Add New MCP Server"** or **"New MCP Server"**
