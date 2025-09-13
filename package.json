@@ -1,6 +1,6 @@
 {
   "name": "@dimwebdev/legal-expert-mcp-server",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "MCP server providing elite-level legal expert prompts for comprehensive compliance analysis",
   "keywords": [
     "mcp",
@@ -18,9 +18,7 @@
   "author": "DimWebDev",
   "license": "MIT",
   "main": "dist/index.js",
-  "bin": {
-    "legal-expert-mcp-server": "dist/index.js"
-  },
+  "bin": "dist/index.js",
   "type": "module",
   "scripts": {
     "build": "tsc",
