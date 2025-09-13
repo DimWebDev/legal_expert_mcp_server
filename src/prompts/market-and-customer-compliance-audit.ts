@@ -10,6 +10,11 @@ server.registerPrompt(
       jurisdiction: z
         .string()
         .describe("Primary market jurisdiction (US, EU, UK, CA, AU, etc.)"),
+      sector: z
+        .string()
+        .describe(
+          "Business sector: fintech|healthtech|edtech|ecommerce|saas|marketplace|ai-ml (used as primary; inference validates only)"
+        ),
       businessModel: z
         .string()
         .optional()
@@ -26,7 +31,7 @@ server.registerPrompt(
         .describe("Payment provider: stripe|paypal|square|custom"),
     },
   },
-  async ({ jurisdiction, businessModel, targetPath, paymentProvider }) => ({
+  async ({ jurisdiction, sector, businessModel, targetPath, paymentProvider }) => ({
     messages: [
       {
         role: "user",
@@ -36,6 +41,7 @@ server.registerPrompt(
 
 CONTEXT INPUTS:
 - Jurisdiction: ${jurisdiction} (Note: Include both national consumer laws and inherited supranational frameworks applicable to this jurisdiction)
+- Sector: ${sector} (Use as primary for sector overlays; infer domain(s) to validate and note mismatch.)
 - Business Model: ${businessModel || "infer from repository signals"}
 - Target Path: ${targetPath || "workspace root"}
 - Payment Provider: ${paymentProvider || "infer or list all detected"}
@@ -66,7 +72,7 @@ PHASE 1: CUSTOMER-FACING DISCOVERY
 • You should identify subscription behavior (trial length, renewal timing, notification practices).
 
 PHASE 2: CONSUMER PROTECTION CORE REVIEW
-• Automatically infer the project's industry domain(s) from repository evidence (APIs, data models, terminology, and integrations) and apply the matching sector-specific consumer protection overlays.
+• You should apply sector-specific consumer protection overlays using the provided sector (${sector}) as primary; also infer domain(s) to validate and note mismatch.
 • You should analyze clarity of key commercial terms (price, frequency, renewal, refund eligibility, restrictions).
 • If multiple jurisdictions are implicated, synthesize common denominators, highlight stricter-rule defaults, and flag conflicts requiring jurisdiction-specific handling.
 • Consider regional/treaty overlays (e.g., EEA/EFTA, Council of Europe, CPTPP) where applicable.
