@@ -61,12 +61,14 @@ YOUR OBJECTIVES:
 PHASE 1: DATA DISCOVERY & MAPPING (YOU MUST EXECUTE)
 • You should use GLOB to locate relevant files: "**/*.{ts,js,py,go,json,yml,yaml,md,sql}".
 • You should use GREP to detect data indicators: "email|phone|ip[_-]?address|cookie|session|user(_|-)id|consent|tracking|analytics|retention|erase|export".
+• For fintech businesses: Include financial data patterns: "bank[_-]?account|credit[_-]?card|wallet|transaction|balance|payment[_-]?method|kyc|aml|ssn|tax[_-]?id".
 • You should map: data categories, collection points (API endpoints, forms, services), storage backends, third-party processors, and outbound transfers.
 • You should identify potential cross-border transfer vectors (CDN, logging, analytics, API calls).
 • You should capture retention or deletion logic (cron jobs, lifecycle configs) or note absence.
 
 PHASE 2: OBLIGATIONS & CONTROL ANALYSIS
 • You should enumerate key obligations relevant to ${jurisdiction} (e.g., GDPR core principles, CCPA consumer rights, UK-GDPR continuity, LGPD overlaps).
+• For fintech sector: Include financial data protection requirements (PSD2 security standards, PCI DSS if card data handled, AML data retention rules).
 • If multiple jurisdictions are implicated, synthesize common denominators, highlight stricter-rule defaults, and flag conflicts requiring jurisdiction-specific handling.
 • Consider regional/treaty overlays (e.g., EEA/EFTA, Council of Europe, CPTPP) where applicable.
 • You should determine lawful bases used or implied (consent, contract, legitimate interests, legal obligation, vital interests, public task) and note unclear bases.

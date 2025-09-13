@@ -86,6 +86,8 @@ PHASE 4: PAYMENT, BILLING & FINANCIAL PRACTICES
 • You should check handling of failed payments / dunning signals if present.
 • You should flag international pricing / currency display consistency issues.
 • You should identify auto-renewal pre-renewal notice absence if subscription exists.
+• For fintech/crypto businesses: Check AML/KYC integration points, wallet address validation, transaction monitoring signals, and regulatory reporting compliance.
+• For crypto platforms: Assess token disclosure requirements, volatility risk warnings, and jurisdiction-specific licensing needs.
 
 RISK HEURISTICS (APPLY REASONABLY):
 • You should treat missing cancellation path or dark patterns as High/Critical.
@@ -93,6 +95,8 @@ RISK HEURISTICS (APPLY REASONABLY):
 • You should treat over-claiming product outcomes without evidence as High reputational + regulatory risk.
 • You should treat ambiguous trial → paid transition messaging as High.
 • You should treat minor formatting / labeling inconsistencies as Low unless compounding.
+• For fintech: Treat missing AML/KYC processes as Critical regulatory risk.
+• For crypto: Treat inadequate volatility disclosures or missing licensing as Critical.
 
 DELIVERABLES (MANDATORY ORDER):
 Generate this report and save it in legal_docs/market-customer-compliance-audit-report-{timestamp}.md. Report the output directory to the user.
@@ -108,6 +112,7 @@ Generate this report and save it in legal_docs/market-customer-compliance-audit-
 5. Remediation Action Plan
   - You should group actions: Immediate | Near-Term | Structural.
   - Offer two tracks where feasible: low-effort/quick-win path and comprehensive/structural path.
+  - For fintech solo developers: Quick-win track might include basic payment disclaimers and refund policies; comprehensive track includes full AML/KYC integration and regulatory reporting systems.
 6. Assumptions & Limitations
   - You should list unavailable evidence or inferred flows.
 

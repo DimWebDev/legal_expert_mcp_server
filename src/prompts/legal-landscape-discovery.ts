@@ -78,6 +78,7 @@ PHASE 2: PROMPT ARCHITECTURE & ORCHESTRATION RISK
 PHASE 3: JURISDICTIONAL & EXPANSION FACTORS
 • You should outline US considerations (UPL patchwork, FTC guidance, CCPA/CPRA if data touches CA residents).
 • You should outline EU considerations (controller vs processor posture; ePrivacy interplay; GDPR triggers; AI Act likely low-risk classification rationale).
+• For fintech sector specifically: Include PSD2/MiFID II requirements, crypto-asset regulations (MiCA if applicable), AML/KYC frameworks, and financial data protection rules.
 • If multiple jurisdictions are implicated, synthesize common denominators, highlight stricter-rule defaults, and flag conflicts requiring jurisdiction-specific handling.
 • Consider regional/treaty overlays (e.g., EEA/EFTA, Council of Europe, CPTPP) where applicable.
 • You should outline UK/Commonwealth parallels and disclaimer localization needs.
@@ -90,6 +91,7 @@ PHASE 4: GUARDRAILS & STRATEGIC ROADMAP
   - Near-Term: privacy notice draft, standardized disclaimer fragment, methodology versioning + changelog, risk register initiation.
   - Growth: CLA/DCO adoption, modular licensing strategy, API usage terms, governance guidelines.
   - Scale: periodic external legal review, optional audit trail mode, localized disclaimers, AI transparency statement alignment.
+• For fintech sector: Include immediate AML/KYC policy stubs, financial data handling protocols, and regulatory reporting frameworks in early tiers.
 
 SPECIAL FOCUS AREAS
 • You should define: disclaimer standardization, methodology version control, jurisdiction overfitting avoidance, responsible AI statements (bias/fairness provenance for AI-related prompts), security alignment (no secret ingestion boundary).
@@ -111,6 +113,7 @@ Generate this report and save it in legal_docs/legal-landscape-discovery-report-
 7. Maturity Roadmap (tiered)
   - You should outline a step-by-step plan to help developers and startups progressively address legal requirements as their business grows.
   - Offer two tracks where feasible: low-effort/quick-win path and comprehensive/structural path.
+  - For fintech solo developers: Quick-win track might include basic AML/KYC templates and crypto volatility disclaimers; comprehensive track includes full regulatory compliance frameworks and third-party audit preparation.
 8. Monitoring & Change Management Plan (sources, cadence, responsible roles placeholder)
 
 STYLE & SAFETY
