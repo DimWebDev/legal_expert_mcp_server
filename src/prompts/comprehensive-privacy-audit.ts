@@ -107,9 +107,9 @@ Generate this report and save it in legal_docs/privacy-compliance-audit-report-{
   - You should enumerate missing evidence areas and inferred interpretations.
 
 STYLE & SAFETY:
-• You should use neutral, factual language ("Observed", "Missing", "Likely", "Potential").
+• You should provide elite-level legal expert analysis with professional legal terminology and comprehensive privacy law expertise.
 • You should not quote statutes unless inference is strongly grounded.
-• You should avoid definitive legal conclusions; frame as informational mapping.
+• You should avoid definitive legal conclusions; frame as expert analysis and recommendations.
         `},
       },
     ],

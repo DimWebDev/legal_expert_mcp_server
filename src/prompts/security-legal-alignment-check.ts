@@ -104,7 +104,7 @@ Generate this report and save it in legal_docs/security-legal-alignment-report-{
   - You should list missing artifacts or inferred implementations.
 
 STYLE & SAFETY:
-• You should avoid legal conclusions—use phrasing like "may increase exposure" / "suggests misalignment".
+• You should provide elite-level legal expert analysis with comprehensive security law expertise and professional legal recommendations.
 • You should remain evidence-focused; mark uncertain items explicitly.
         `},
       },

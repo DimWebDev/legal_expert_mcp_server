@@ -107,7 +107,7 @@ Generate this report and save it in legal_docs/website-app-disclosure-check-repo
   - You should list missing evidence or inferred determinations.
 
 STYLE & SAFETY:
-• You should remain neutral and evidence-based.
+• You should provide elite-level legal expert analysis with comprehensive disclosure law expertise and professional legal recommendations.
 • You should avoid definitive enforceability judgments—frame as potential risk.
         `},
       },

@@ -6,7 +6,7 @@ server.registerPrompt(
   {
     title: "Legal Landscape Discovery",
     description:
-      "Comprehensive legal framework mapping for startup/business sector and jurisdiction",
+      "Guide developers and startups through legal frameworks relevant to their business sector and jurisdiction",
     argsSchema: {
       jurisdiction: z
         .string()
@@ -36,7 +36,7 @@ server.registerPrompt(
         role: "user",
         content: {
           type: "text",
-          text: `You are to conduct a legal landscape discovery for this prompts-based Legal Expert MCP Server context. You must map obligations, safe boundaries, and strategic guardrails.
+          text: `You are to help developers and startups navigate the legal landscape by conducting a comprehensive discovery of relevant frameworks, obligations, safe boundaries, and strategic guardrails for their specific business context.
 
 CONTEXT INPUTS:
 - Jurisdiction: ${jurisdiction}
@@ -58,18 +58,18 @@ PRE-SCAN (RAPID CONTEXT PRIMING YOU MUST PERFORM BEFORE OBJECTIVES):
 • You should not read file contents—only names / relative paths.
 
 YOUR OBJECTIVES:
-1. You should identify baseline legal & quasi-legal frameworks relevant to a prompts-distribution / developer enablement platform.
+1. You should help developers and startups identify baseline legal & quasi-legal frameworks relevant to their software development and business activities.
 2. You should surface data protection & AI governance implications when prompts may orchestrate analysis of user repositories and external sources.
 3. You should clarify IP ownership, licensing posture, and contribution governance for methodology prompts.
 4. You should define guardrails to avoid unauthorized practice of law (UPL) across target jurisdictions.
-5. You should produce a phased maturity roadmap (MVP → Stabilization → Growth → Scale).
+5. You should produce a phased maturity roadmap (MVP → Stabilization → Growth → Scale) to guide their legal compliance journey.
 
 PHASE 1: FOUNDATIONAL BASELINE
 • You should map: corporate platform operations (governance, limitation of liability stance), disclaimers structure, UPL boundary criteria (holding out / reliance / individualized advice signals), user classification (consumer vs professional) impact, privacy-by-design posture (transient analysis, minimal retention), IP methodology ownership & license clarity, dependency/license compatibility.
 
 PHASE 2: PROMPT ARCHITECTURE & ORCHESTRATION RISK
 • You should evaluate tool invocation patterns (glob/grep/webfetch) for inadvertent sensitive data ingestion risks.
-• You should ensure report framing remains "informational" not directive legal determinations.
+• You should provide elite-level legal expert analysis and actionable recommendations based on comprehensive legal expertise.
 • You should assess hallucination mitigation mechanisms (scaffolding, explicit limitations).
 • You should verify model/provider neutrality (no embedded proprietary heuristics).
 • You should consider logging/telemetry implications for data protection triggers.
@@ -98,23 +98,27 @@ DELIVERABLES (MANDATORY ORDER)
 Generate this report and save it in legal_docs/legal-landscape-discovery-report-{timestamp}.md. Report the output directory to the user.
 
 1. Executive Summary
+  - You should provide a clear overview of key legal considerations and actionable guidance for the developer's or startup's specific context.
 2. Regulatory & Framework Map
+  - You should provide a clear mapping of applicable laws and regulations to help developers and startups understand their legal obligations.
 3. Compliance Guardrail Matrix (area | current | target | gap | risk | control direction)
 4. IP & Licensing Governance
 5. Data & AI Governance Layer
 6. Disclaimers & Safe Boundary Toolkit
 7. Maturity Roadmap (tiered)
+  - You should outline a step-by-step plan to help developers and startups progressively address legal requirements as their business grows.
 8. Monitoring & Change Management Plan (sources, cadence, responsible roles placeholder)
 
 STYLE & SAFETY
 • You should use neutral, implementation-oriented language.
-• You should avoid individualized legal advice—use "informational", "framework", "mapping".
+• You should provide elite-level legal expert analysis using professional legal terminology and comprehensive legal frameworks.
 • You should flag uncertainty as "Jurisdiction-Specific Validation Recommended".
 
 FINAL OUTPUT
 • You should produce Markdown with clear section headings.
 • You should list assumptions explicitly where repository context is insufficient.
-        `},
+        `,
+        },
       },
     ],
   })

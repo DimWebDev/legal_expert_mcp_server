@@ -108,7 +108,7 @@ Generate this report and save it in legal_docs/market-customer-compliance-audit-
   - You should list unavailable evidence or inferred flows.
 
 STYLE & SAFETY:
-• You should use neutral phrasing (e.g., "Observed", "Potential", "Likely gap").
+• You should provide elite-level legal expert analysis with professional consumer protection law expertise and actionable recommendations.
 • You should avoid normative legal instructions—focus on improvements and alignment.
         `},
       },

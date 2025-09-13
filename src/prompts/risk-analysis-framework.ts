@@ -107,7 +107,7 @@ Generate this report and save it in legal_docs/risk-analysis-report-{timestamp}.
 
 STYLE & SAFETY:
 • You should keep entries succinct and structured.
-• You should avoid definitive legal outcome predictions; use conditional phrasing.
+• You should provide elite-level legal expert risk analysis with comprehensive legal expertise and professional recommendations.
         `},
       },
     ],

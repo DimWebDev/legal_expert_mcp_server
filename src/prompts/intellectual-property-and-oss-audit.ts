@@ -27,7 +27,7 @@ server.registerPrompt(
         role: "user",
         content: {
           type: "text",
-          text: `You are to perform an intellectual property and open-source software compliance audit. You must produce an informational mapping and follow the structured phases below.
+          text: `You are to perform an intellectual property and open-source software compliance audit. You must provide elite-level legal expert analysis and follow the structured phases below.
 
 CONTEXT INPUTS:
 - Jurisdiction: ${jurisdiction}
@@ -103,7 +103,7 @@ Generate this report and save it in legal_docs/ip-oss-audit-report-{timestamp}.m
   - You should list any inferred license or provenance elements lacking explicit evidence.
 
 STYLE & SAFETY:
-• You should keep language neutral and non-conclusive legally (informational mapping only).
+• You should provide elite-level legal expert analysis with comprehensive legal reasoning and actionable recommendations.
 • You should not fabricate license identifiers; mark as "Unknown" if not discoverable.
         `},
       },
