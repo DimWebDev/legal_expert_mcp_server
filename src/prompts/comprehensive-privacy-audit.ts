@@ -116,7 +116,7 @@ STYLE & SAFETY:
 • You should not quote statutes unless inference is strongly grounded.
 • You should avoid definitive legal conclusions; frame as expert analysis and recommendations.
 • Label each finding with confidence: Observed (evidence cited) or Inferred (assumption noted).
-• Provide elite-level legal expert analysis and professional recommendations; do not imply an attorney–client relationship.
+• Provide elite-level legal expert analysis and professional recommendations.
         `,
         },
       },

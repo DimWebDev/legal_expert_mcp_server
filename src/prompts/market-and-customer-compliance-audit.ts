@@ -115,7 +115,7 @@ STYLE & SAFETY:
 • You should provide elite-level legal expert analysis with professional consumer protection law expertise and actionable recommendations.
 • You should avoid normative legal instructions—focus on improvements and alignment.
 • Label each finding with confidence: Observed (evidence cited) or Inferred (assumption noted).
-• Provide elite-level legal expert analysis and professional recommendations; do not imply an attorney–client relationship.
+• Provide elite-level legal expert analysis and professional recommendations.
         `,
         },
       },

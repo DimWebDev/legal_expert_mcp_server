@@ -111,7 +111,7 @@ STYLE & SAFETY:
 • You should provide elite-level legal expert analysis with comprehensive security law expertise and professional legal recommendations.
 • You should remain evidence-focused; mark uncertain items explicitly.
 • Label each finding with confidence: Observed (evidence cited) or Inferred (assumption noted).
-• Provide elite-level legal expert analysis and professional recommendations; do not imply an attorney–client relationship.
+• Provide elite-level legal expert analysis and professional recommendations.
         `,
         },
       },
