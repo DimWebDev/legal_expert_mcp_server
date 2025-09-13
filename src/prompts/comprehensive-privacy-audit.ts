@@ -67,6 +67,7 @@ PHASE 1: DATA DISCOVERY & MAPPING (YOU MUST EXECUTE)
 • You should capture retention or deletion logic (cron jobs, lifecycle configs) or note absence.
 
 PHASE 2: OBLIGATIONS & CONTROL ANALYSIS
+• Infer domain(s) and apply sector privacy overlays (e.g., financial, health, education) based on repository evidence.
 • You should enumerate key obligations relevant to ${jurisdiction} (e.g., GDPR core principles, CCPA consumer rights, UK-GDPR continuity, LGPD overlaps).
 • For fintech sector: Include financial data protection requirements (PSD2 security standards, PCI DSS if card data handled, AML data retention rules).
 • If multiple jurisdictions are implicated, synthesize common denominators, highlight stricter-rule defaults, and flag conflicts requiring jurisdiction-specific handling.

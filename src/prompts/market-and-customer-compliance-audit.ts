@@ -66,6 +66,7 @@ PHASE 1: CUSTOMER-FACING DISCOVERY
 • You should identify subscription behavior (trial length, renewal timing, notification practices).
 
 PHASE 2: CONSUMER PROTECTION CORE REVIEW
+• Automatically infer the project's industry domain(s) from repository evidence (APIs, data models, terminology, and integrations) and apply the matching sector-specific consumer protection overlays.
 • You should analyze clarity of key commercial terms (price, frequency, renewal, refund eligibility, restrictions).
 • If multiple jurisdictions are implicated, synthesize common denominators, highlight stricter-rule defaults, and flag conflicts requiring jurisdiction-specific handling.
 • Consider regional/treaty overlays (e.g., EEA/EFTA, Council of Europe, CPTPP) where applicable.

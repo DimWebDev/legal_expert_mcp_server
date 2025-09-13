@@ -76,6 +76,7 @@ PHASE 1: SYSTEM DISCOVERY & CLASSIFICATION
 
 PHASE 2: REGULATORY & GOVERNANCE MAPPING
 • You should identify applicable frameworks for ${jurisdiction} (e.g., EU AI Act, GDPR Art. 22, FTC guidance, sectoral rules, emerging AI policies).
+• Infer domain(s) and apply sector AI/algorithmic accountability overlays (e.g., finance, health, employment) based on repository evidence.
 • If multiple jurisdictions are implicated, synthesize common denominators, highlight stricter-rule defaults, and flag conflicts requiring jurisdiction-specific handling.
 • Consider regional/treaty overlays (e.g., EEA/EFTA, Council of Europe, CPTPP) where applicable.
 • You should map algorithmic accountability obligations (documentation, traceability, logging, conformity processes).

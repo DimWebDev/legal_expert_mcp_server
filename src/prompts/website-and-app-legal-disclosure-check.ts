@@ -74,6 +74,7 @@ PHASE 2: REQUIREMENT COVERAGE EVALUATION
 • You should note presence/absence of accessibility statement or baseline claims.
 
 PHASE 3: RISK & DEFICIENCY ANALYSIS
+• Infer domain(s) and apply sector-specific disclosure overlays (e.g., medical, financial, youth) based on repository evidence.
 • You should identify inconsistent wording across locales or pages.
 • You should flag outdated or missing "Last Updated" indicators.
 • You should detect overbroad disclaimers or unenforceable liability waivers (note as potential enforceability risk—not legal conclusion).

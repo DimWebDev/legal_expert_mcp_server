@@ -64,6 +64,7 @@ PHASE 1: CONTROL DISCOVERY
 • You should identify infrastructure-as-code or policy-as-code definitions that enforce controls.
 
 PHASE 2: OBLIGATION MAPPING
+• Automatically infer the project's industry domain(s) from repository evidence (APIs, data models, terminology, and integrations) and apply the matching sector-specific security obligation overlays.
 • You should list potential legal obligations (e.g., breach notification timelines, data minimization, secure disposal, access control principles, audit logging sufficiency).
 • If multiple jurisdictions are implicated, synthesize common denominators, highlight stricter-rule defaults, and flag conflicts requiring jurisdiction-specific handling.
 • Consider regional/treaty overlays (e.g., EEA/EFTA, Council of Europe, CPTPP) where applicable.
