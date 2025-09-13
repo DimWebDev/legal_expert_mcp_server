@@ -76,7 +76,7 @@ Below each prompt lists **Required** and **Optional** arguments you can pass to 
 
 ### 3. comprehensive-privacy-audit
 
-- Required: `jurisdiction`
+- Required: `jurisdiction`, `sector`
 - Optional: `regulations`, `targetPath`
 - Purpose: Data lifecycle mapping, obligations coverage, and risk-based privacy gap analysis.
 
@@ -88,13 +88,13 @@ Below each prompt lists **Required** and **Optional** arguments you can pass to 
 
 ### 5. security-legal-alignment-check
 
-- Required: (none)
-- Optional: `jurisdiction`, `targetPath`, `securityFrameworks`
+- Required: `jurisdiction`, `sector`
+- Optional: `targetPath`, `securityFrameworks`
 - Purpose: Map implemented security controls to legal/regulatory expectation areas.
 
 ### 6. ai-ethics-and-compliance-scan
 
-- Required: `jurisdiction`
+- Required: `jurisdiction`, `sector`
 - Optional: `aiModelType`, `targetPath`, `riskLevel`
 - Purpose: AI/ML system classification, governance signals, risk tiering & mitigation direction.
 
@@ -106,7 +106,7 @@ Below each prompt lists **Required** and **Optional** arguments you can pass to 
 
 ### 8. market-and-customer-compliance-audit
 
-- Required: `jurisdiction`
+- Required: `jurisdiction`, `sector`
 - Optional: `businessModel`, `targetPath`, `paymentProvider`
 - Purpose: Consumer-facing lifecycle fairness, pricing clarity, marketing representation risk.
 
@@ -130,8 +130,11 @@ In Claude Code, VS Code, and Cursor, these prompts are available as slash comman
 
 For example:
 
-- `/legal-landscape-discovery` will prompt for `jurisdiction` and `sector` (required), and optionally `businessModel` and `targetPath`.
-- `/comprehensive-privacy-audit` will prompt for `jurisdiction` (required), and optionally `regulations` and `targetPath`.
+- `/legal-landscape-discovery` prompts for `jurisdiction` and `sector` (required), optionally `businessModel` and `targetPath`.
+- `/comprehensive-privacy-audit` prompts for `jurisdiction` and `sector` (required), optionally `regulations` and `targetPath`.
+- `/ai-ethics-and-compliance-scan` prompts for `jurisdiction` and `sector` (required), optionally `aiModelType`, `targetPath`, `riskLevel`.
+- `/security-legal-alignment-check` prompts for `jurisdiction` and `sector` (required), optionally `securityFrameworks`, `targetPath`.
+- `/market-and-customer-compliance-audit` prompts for `jurisdiction` and `sector` (required), optionally `businessModel`, `paymentProvider`, `targetPath`.
 
 This interactive prompting ensures that each analysis is tailored to your specific legal, jurisdictional, and product context across all supported MCP clients.
 

@@ -11,6 +11,11 @@ server.registerPrompt(
       jurisdiction: z
         .string()
         .describe("Primary jurisdiction (EU, US-CA, CA, UK, US-VA, etc.)"),
+      sector: z
+        .string()
+        .describe(
+          "Business sector: fintech|healthtech|edtech|ecommerce|saas|marketplace|ai-ml (used as primary; inference validates only)"
+        ),
       regulations: z
         .string()
         .optional()
@@ -23,7 +28,7 @@ server.registerPrompt(
         ),
     },
   },
-  async ({ jurisdiction, regulations, targetPath }) => ({
+  async ({ jurisdiction, sector, regulations, targetPath }) => ({
     messages: [
       {
         role: "user",
@@ -36,6 +41,7 @@ CONTEXT INPUTS:
 - Declared / Applicable Regulations: ${regulations || "infer from jurisdiction"}
   - When regulations are explicitly provided, treat them as the primary scope; still include inherited supra-/sub-national obligations that apply.
 - Target Path: ${targetPath || "workspace root"}
+- Sector: ${sector} (Use as primary for sector overlays; infer domain(s) to validate and flag any discrepancy as "Observed vs Provided sector").
 
 PRE-SCAN (RAPID CONTEXT PRIMING YOU MUST PERFORM BEFORE PHASE 1):
 • You should run an equivalent of: git ls-files (no truncation).
@@ -67,7 +73,7 @@ PHASE 1: DATA DISCOVERY & MAPPING (YOU MUST EXECUTE)
 • You should capture retention or deletion logic (cron jobs, lifecycle configs) or note absence.
 
 PHASE 2: OBLIGATIONS & CONTROL ANALYSIS
-• Infer domain(s) and apply sector privacy overlays (e.g., financial, health, education) based on repository evidence.
+• You should apply sector privacy overlays using the provided sector (${sector}) as primary; also infer domain(s) to validate and note any mismatch.
 • You should enumerate key obligations relevant to ${jurisdiction} (e.g., GDPR core principles, CCPA consumer rights, UK-GDPR continuity, LGPD overlaps).
 • For fintech sector: Include financial data protection requirements (PSD2 security standards, PCI DSS if card data handled, AML data retention rules).
 • If multiple jurisdictions are implicated, synthesize common denominators, highlight stricter-rule defaults, and flag conflicts requiring jurisdiction-specific handling.

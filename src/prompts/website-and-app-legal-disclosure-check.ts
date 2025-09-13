@@ -13,6 +13,11 @@ server.registerPrompt(
         .describe(
           "Primary user market jurisdiction (US, EU, UK, CA, AU, etc.)"
         ),
+      sector: z
+        .string()
+        .describe(
+          "Business sector: fintech|healthtech|edtech|ecommerce|saas|marketplace|ai-ml (used as primary; inference validates only)"
+        ),
       targetPath: z
         .string()
         .optional()
@@ -25,7 +30,7 @@ server.registerPrompt(
         .describe("Product type: web|mobile|hybrid|api-platform"),
     },
   },
-  async ({ jurisdiction, targetPath, productType }) => ({
+  async ({ jurisdiction, sector, targetPath, productType }) => ({
     messages: [
       {
         role: "user",
@@ -35,6 +40,7 @@ server.registerPrompt(
 
 CONTEXT INPUTS:
 - Jurisdiction: ${jurisdiction} (Note: Include both national disclosure requirements and inherited supranational frameworks applicable to this jurisdiction)
+- Sector: ${sector} (Use as primary for sector-specific disclosure overlays; infer domain(s) to validate and flag mismatch.)
 - Target Path: ${targetPath || "workspace root"}
 - Product Type: ${productType || "infer from repository structure"}
 
@@ -74,7 +80,7 @@ PHASE 2: REQUIREMENT COVERAGE EVALUATION
 • You should note presence/absence of accessibility statement or baseline claims.
 
 PHASE 3: RISK & DEFICIENCY ANALYSIS
-• Infer domain(s) and apply sector-specific disclosure overlays (e.g., medical, financial, youth) based on repository evidence.
+• You should apply sector-specific disclosure overlays using the provided sector (${sector}) as primary; also infer domain(s) to validate and note mismatch.
 • You should identify inconsistent wording across locales or pages.
 • You should flag outdated or missing "Last Updated" indicators.
 • You should detect overbroad disclaimers or unenforceable liability waivers (note as potential enforceability risk—not legal conclusion).

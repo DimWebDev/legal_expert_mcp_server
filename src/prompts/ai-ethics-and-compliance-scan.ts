@@ -11,6 +11,11 @@ server.registerPrompt(
       jurisdiction: z
         .string()
         .describe("Primary jurisdiction (EU, US, UK, CA, etc.)"),
+      sector: z
+        .string()
+        .describe(
+          "Business sector: fintech|healthtech|edtech|ecommerce|saas|marketplace|ai-ml (used as primary; inference validates only)"
+        ),
       aiModelType: z
         .string()
         .optional()
@@ -27,7 +32,7 @@ server.registerPrompt(
         .describe("Anticipated risk level: minimal|limited|high|prohibited"),
     },
   },
-  async ({ jurisdiction, aiModelType, targetPath, riskLevel }) => ({
+  async ({ jurisdiction, sector, aiModelType, targetPath, riskLevel }) => ({
     messages: [
       {
         role: "user",
@@ -37,6 +42,7 @@ server.registerPrompt(
 
 CONTEXT INPUTS YOU SHOULD USE:
 - Jurisdiction: ${jurisdiction} (Note: Include both national regulations and inherited supranational frameworks applicable to this jurisdiction)
+- Sector: ${sector} (Use as primary for sector overlays; infer domain(s) to validate and flag mismatch.)
 - AI Model Type (if detectable): ${
             aiModelType || "infer from repository artifacts"
           }
@@ -76,7 +82,7 @@ PHASE 1: SYSTEM DISCOVERY & CLASSIFICATION
 
 PHASE 2: REGULATORY & GOVERNANCE MAPPING
 • You should identify applicable frameworks for ${jurisdiction} (e.g., EU AI Act, GDPR Art. 22, FTC guidance, sectoral rules, emerging AI policies).
-• Infer domain(s) and apply sector AI/algorithmic accountability overlays (e.g., finance, health, employment) based on repository evidence.
+• You should apply sector AI/algorithmic accountability overlays using the provided sector (${sector}) as primary; also infer domain(s) to validate and note any mismatch.
 • If multiple jurisdictions are implicated, synthesize common denominators, highlight stricter-rule defaults, and flag conflicts requiring jurisdiction-specific handling.
 • Consider regional/treaty overlays (e.g., EEA/EFTA, Council of Europe, CPTPP) where applicable.
 • You should map algorithmic accountability obligations (documentation, traceability, logging, conformity processes).

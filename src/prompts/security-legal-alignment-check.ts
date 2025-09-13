@@ -10,9 +10,13 @@ server.registerPrompt(
     argsSchema: {
       jurisdiction: z
         .string()
-        .optional()
         .describe(
           "Primary jurisdiction (affects breach, notification, and retention obligations)"
+        ),
+      sector: z
+        .string()
+        .describe(
+          "Business sector: fintech|healthtech|edtech|ecommerce|saas|marketplace|ai-ml (used as primary; inference validates only)"
         ),
       targetPath: z
         .string()
@@ -24,7 +28,7 @@ server.registerPrompt(
         .describe("Declared frameworks: ISO27001|NIST-CSF|SOC2|CIS|Custom"),
     },
   },
-  async ({ jurisdiction, targetPath, securityFrameworks }) => ({
+  async ({ jurisdiction, sector, targetPath, securityFrameworks }) => ({
     messages: [
       {
         role: "user",
@@ -35,9 +39,10 @@ server.registerPrompt(
           }.
 
 CONTEXT INPUTS:
-- Jurisdiction Scope: ${jurisdiction || "multi-jurisdiction"} (Note: Include both national security laws and inherited supranational frameworks applicable to this jurisdiction)
+- Jurisdiction Scope: ${jurisdiction} (Note: Include both national security laws and inherited supranational frameworks applicable to this jurisdiction)
 - Target Path: ${targetPath || "workspace root"}
 - Declared Frameworks: ${securityFrameworks || "infer from artifacts"}
+- Sector: ${sector} (Use as primary for sector-specific security overlays; infer domain(s) to validate and flag any discrepancy.)
 
 PRE-SCAN (RAPID CONTEXT PRIMING YOU MUST PERFORM BEFORE PHASE 1):
 • You should run an equivalent of: git ls-files (no truncation).
@@ -64,7 +69,7 @@ PHASE 1: CONTROL DISCOVERY
 • You should identify infrastructure-as-code or policy-as-code definitions that enforce controls.
 
 PHASE 2: OBLIGATION MAPPING
-• Automatically infer the project's industry domain(s) from repository evidence (APIs, data models, terminology, and integrations) and apply the matching sector-specific security obligation overlays.
+• You should apply sector-specific security obligation overlays using the provided sector (${sector}) as primary; also infer domain(s) to validate and note mismatch.
 • You should list potential legal obligations (e.g., breach notification timelines, data minimization, secure disposal, access control principles, audit logging sufficiency).
 • If multiple jurisdictions are implicated, synthesize common denominators, highlight stricter-rule defaults, and flag conflicts requiring jurisdiction-specific handling.
 • Consider regional/treaty overlays (e.g., EEA/EFTA, Council of Europe, CPTPP) where applicable.

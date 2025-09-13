@@ -27,7 +27,7 @@ server.registerPrompt(
   - Optional: jurisdiction, businessContext, riskDomains, findings
 
 - **comprehensive-privacy-audit**: Data lifecycle + obligations gap assessment
-  - Required: jurisdiction
+  - Required: jurisdiction, sector
   - Optional: regulations, targetPath
 
 - **website-and-app-legal-disclosure-check**: Required disclosures inventory & gaps
@@ -35,11 +35,11 @@ server.registerPrompt(
   - Optional: targetPath, productType
 
 - **security-legal-alignment-check**: Security control vs legal obligation mapping
-  - Required: none
-  - Optional: jurisdiction, targetPath, securityFrameworks
+  - Required: jurisdiction, sector
+  - Optional: targetPath, securityFrameworks
 
 - **ai-ethics-and-compliance-scan**: AI system classification & governance assessment
-  - Required: jurisdiction
+  - Required: jurisdiction, sector
   - Optional: aiModelType, targetPath, riskLevel
 
 - **intellectual-property-and-oss-audit**: IP chain, OSS licenses, infringement vectors
@@ -47,7 +47,7 @@ server.registerPrompt(
   - Optional: targetPath, codeOwnershipModel
 
 - **market-and-customer-compliance-audit**: Consumer-facing flows, pricing, marketing fairness
-  - Required: jurisdiction
+  - Required: jurisdiction, sector
   - Optional: businessModel, targetPath, paymentProvider
 
 ## Usage Notes

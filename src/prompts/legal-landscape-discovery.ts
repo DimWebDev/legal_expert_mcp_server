@@ -14,7 +14,7 @@ server.registerPrompt(
       sector: z
         .string()
         .describe(
-          "Business sector: fintech|healthtech|edtech|ecommerce|saas|marketplace|ai-ml"
+          "Business sector (examples: fintech, healthtech, edtech, ecommerce, saas, marketplace, ai-ml)"
         ),
       businessModel: z
         .string()
@@ -60,7 +60,7 @@ PRE-SCAN (RAPID CONTEXT PRIMING YOU MUST PERFORM BEFORE OBJECTIVES):
 YOUR OBJECTIVES:
 1. You should help developers and startups identify baseline legal & quasi-legal frameworks relevant to their software development and business activities.
 • Include applicable supra- and sub-national frameworks inherited by the selected jurisdiction (e.g., EU→member state; US federal→state; CA federal→provincial).
-• Automatically infer the project's industry domain(s) from repository evidence (APIs, data models, terminology, and integrations) and apply the matching sector-specific legal overlays.
+• Confirm the provided sector: ${sector} based on repository evidence and apply the matching sector-specific legal overlays.
 2. You should surface data protection & AI governance implications when prompts may orchestrate analysis of user repositories and external sources.
 3. You should clarify IP ownership, licensing posture, and contribution governance for methodology prompts.
 4. You should define guardrails to avoid unauthorized practice of law (UPL) across target jurisdictions.
@@ -79,7 +79,7 @@ PHASE 2: PROMPT ARCHITECTURE & ORCHESTRATION RISK
 PHASE 3: JURISDICTIONAL & EXPANSION FACTORS
 • You should outline US considerations (UPL patchwork, FTC guidance, CCPA/CPRA if data touches CA residents).
 • You should outline EU considerations (controller vs processor posture; ePrivacy interplay; GDPR triggers; AI Act likely low-risk classification rationale).
-• For fintech sector specifically: Include PSD2/MiFID II requirements, crypto-asset regulations (MiCA if applicable), AML/KYC frameworks, and financial data protection rules.
+• For the provided sector (${sector}) specifically: Include relevant sector-specific regulations and requirements.
 • If multiple jurisdictions are implicated, synthesize common denominators, highlight stricter-rule defaults, and flag conflicts requiring jurisdiction-specific handling.
 • Consider regional/treaty overlays (e.g., EEA/EFTA, Council of Europe, CPTPP) where applicable.
 • You should outline UK/Commonwealth parallels and disclaimer localization needs.
