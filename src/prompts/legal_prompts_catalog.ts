@@ -2,9 +2,9 @@ import { server } from "../server.js";
 import { z } from "zod";
 
 server.registerPrompt(
-  "legal_expert_prompts_catalog",
+  "legal_prompts_catalog",
   {
-    title: "Legal Expert Prompts Catalog",
+    title: "Legal Prompts Catalog",
     description: "List all available legal analysis prompts",
     argsSchema: {},
   },
@@ -14,7 +14,7 @@ server.registerPrompt(
         role: "user",
         content: {
           type: "text",
-          text: `Here are all available legal expert prompts in this MCP server:
+          text: `Here are all available legal prompts in this MCP server:
 
 ## Available Prompts
 

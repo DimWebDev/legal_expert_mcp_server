@@ -1,7 +1,7 @@
-# Legal Expert MCP Server
+# Legal Info MCP Server
 
 > [!WARNING]
-> This Legal Expert Model Context Protocol (MCP) server produces _informational_ analyses only. It does **not** constitute legal advice, does **not** create an attorney–client relationship, and may contain errors or omissions. Large Language Models (LLMs) can hallucinate or misinterpret context. You (the user) are solely responsible for validating outputs before relying on them. The author(s) of this project assume **no liability** for any legal, regulatory, commercial, or compliance consequences arising from use of the generated reports.
+> This Legal Info Model Context Protocol (MCP) server produces _informational_ analyses only. It does **not** constitute legal advice, does **not** create an attorney–client relationship, and may contain errors or omissions. Large Language Models (LLMs) can hallucinate or misinterpret context. You (the user) are solely responsible for validating outputs before relying on them. The author(s) of this project assume **no liability** for any legal, regulatory, commercial, or compliance consequences arising from use of the generated reports.
 
 ## Table of Contents
 
@@ -17,7 +17,7 @@
   - [6. ai_ethics_and_compliance_scan](#6-ai_ethics_and_compliance_scan)
   - [7. intellectual_property_and_oss_audit](#7-intellectual_property_and_oss_audit)
   - [8. market_and_customer_compliance_audit](#8-market_and_customer_compliance_audit)
-  - [9. legal_expert_prompts_catalog](#9-legal_expert_prompts_catalog)
+  - [9. legal_prompts_catalog](#9-legal_prompts_catalog)
 - [How to Use Them](#how-to-use-them)
 - [Output Conventions](#output-conventions)
 - [How It Works (Architecture)](#how-it-works-architecture)
@@ -33,7 +33,7 @@
 
 ## What This Is
 
-A modular, high-signal **Legal Expert MCP Server** that provides structured, methodology‑driven prompt endpoints for rapid legal/compliance landscape mapping, gap discovery, and risk prioritization across privacy, IP, AI governance, security, consumer, and disclosure domains.
+A modular, high-signal **Legal Info MCP Server** that provides structured, methodology‑driven prompt endpoints for rapid legal/compliance landscape mapping, gap discovery, and risk prioritization across privacy, IP, AI governance, security, consumer, and disclosure domains.
 
 ## Core Benefits
 
@@ -54,7 +54,7 @@ A modular, high-signal **Legal Expert MCP Server** that provides structured, met
 | Commercial launch readiness         | `market_and_customer_compliance_audit`, `website_and_app_legal_disclosure_check` |
 | Security posture vs legal duties    | `security_legal_alignment_check`                                                 |
 | Consolidate multi‑audit outputs     | `risk_analysis_framework`                                                        |
-| Explore what's available            | `legal_expert_prompts_catalog`                                                   |
+| Explore what's available            | `legal_prompts_catalog`                                                          |
 
 ## Prompts & Arguments (Adaptability Matrix)
 
@@ -108,7 +108,7 @@ Below each prompt lists **Required** and **Optional** arguments you can pass to 
 - Optional: `businessModel`, `targetPath`, `paymentProvider`
 - Purpose: Consumer-facing lifecycle fairness, pricing clarity, marketing representation risk.
 
-### 9. legal_expert_prompts_catalog
+### 9. legal_prompts_catalog
 
 - Required: (none)
 - Optional: `category`
@@ -116,7 +116,7 @@ Below each prompt lists **Required** and **Optional** arguments you can pass to 
 
 ## How to Use Them
 
-In Claude Code, VS Code, and Cursor, these prompts are available as slash commands. When you invoke a prompt using its slash command (e.g., `/mcp__legal_expert__legal_landscape_discovery`), the system will interactively prompt you to provide the required and optional arguments for that prompt.
+In Claude Code, VS Code, and Cursor, these prompts are available as slash commands. When you invoke a prompt using its slash command (e.g., `/mcp__legal_info__legal_landscape_discovery`), the system will interactively prompt you to provide the required and optional arguments for that prompt.
 
 **Claude Code** enforces each prompt's **argsSchema** by interactively collecting required arguments before execution. When you type a slash command for an MCP prompt that has mandatory parameters, Claude Code will:
 
@@ -128,12 +128,12 @@ In Claude Code, VS Code, and Cursor, these prompts are available as slash comman
 
 For example:
 
-- `/mcp__legal_expert__legal_landscape_discovery` prompts for `jurisdiction` and `sector` (required), optionally `businessModel` and `targetPath`.
-- `/mcp__legal_expert__comprehensive_privacy_audit` prompts for `jurisdiction` and `sector` (required), optionally `regulations` and `targetPath`.
-- `/mcp__legal_expert__website_and_app_legal_disclosure_check` prompts for `jurisdiction` and `sector` (required), optionally `targetPath` and `productType`.
-- `/mcp__legal_expert__ai_ethics_and_compliance_scan` prompts for `jurisdiction` and `sector` (required), optionally `aiModelType`, `targetPath`, `riskLevel`.
-- `/mcp__legal_expert__security_legal_alignment_check` prompts for `jurisdiction` and `sector` (required), optionally `securityFrameworks`, `targetPath`.
-- `/mcp__legal_expert__market_and_customer_compliance_audit` prompts for `jurisdiction` and `sector` (required), optionally `businessModel`, `paymentProvider`, `targetPath`.
+- `/mcp__legal_info__legal_landscape_discovery` prompts for `jurisdiction` and `sector` (required), optionally `businessModel` and `targetPath`.
+- `/mcp__legal_info__comprehensive_privacy_audit` prompts for `jurisdiction` and `sector` (required), optionally `regulations` and `targetPath`.
+- `/mcp__legal_info__website_and_app_legal_disclosure_check` prompts for `jurisdiction` and `sector` (required), optionally `targetPath` and `productType`.
+- `/mcp__legal_info__ai_ethics_and_compliance_scan` prompts for `jurisdiction` and `sector` (required), optionally `aiModelType`, `targetPath`, `riskLevel`.
+- `/mcp__legal_info__security_legal_alignment_check` prompts for `jurisdiction` and `sector` (required), optionally `securityFrameworks`, `targetPath`.
+- `/mcp__legal_info__market_and_customer_compliance_audit` prompts for `jurisdiction` and `sector` (required), optionally `businessModel`, `paymentProvider`, `targetPath`.
 
 This interactive prompting ensures that each analysis is tailored to your specific legal, jurisdictional, and product context across all supported MCP clients.
 
@@ -193,14 +193,14 @@ Based on my research of the official Anthropic documentation and various setup g
 
 > [!NOTE] > **MCP prompts are temporarily not supported in Claude Code.** While the server can be installed and connected successfully, the prompt slash commands are not currently working as expected. For full functionality, please use **VS Code** or **Cursor** instead.
 
-To add the Legal Expert MCP Server to Claude Code (connection only):
+To add the Legal Info MCP Server to Claude Code (connection only):
 
 ```bash
 # Basic installation using npx inside a directory
-claude mcp add legal-expert npx @dimwebdev/legal-expert-mcp-server
+claude mcp add legal-info npx @dimwebdev/legal-info-mcp-server
 
 # For user-wide availability
-claude mcp add legal-expert --scope user npx @dimwebdev/legal-expert-mcp-server
+claude mcp add legal-info --scope user npx @dimwebdev/legal-info-mcp-server
 ```
 
 ### VS Code
@@ -213,10 +213,10 @@ VS Code supports MCP servers through GitHub Copilot's agent mode:
    ```json
    {
      "servers": {
-       "legal-expert": {
+       "legal-info": {
          "type": "stdio",
          "command": "npx",
-         "args": ["-y", "@dimwebdev/legal-expert-mcp-server"]
+         "args": ["-y", "@dimwebdev/legal-info-mcp-server"]
        }
      }
    }
@@ -235,23 +235,23 @@ Cursor provides multiple configuration options for MCP servers:
    - Click **"+ Add New MCP Server"** or **"New MCP Server"**
 
 2. **Configure Server**
-   - **Name**: `legal-expert`
+   - **Name**: `legal-info`
    - **Command**: `npx`
-   - **Args**: `["-y", "@dimwebdev/legal-expert-mcp-server"]`
+   - **Args**: `["-y", "@dimwebdev/legal-info-mcp-server"]`
 
 #### Option 2: Manual JSON Configuration
 
 Create or edit the MCP configuration file:
 
-**For Project-Specific Access**:[9]
+**For Project-Specific Access**:
 Create `.cursor/mcp.json` in your project root:
 
 ```json
 {
   "mcpServers": {
-    "legal-expert": {
+    "legal-info": {
       "command": "npx",
-      "args": ["-y", "@dimwebdev/legal-expert-mcp-server"],
+      "args": ["-y", "@dimwebdev/legal-info-mcp-server"],
       "env": {}
     }
   }
@@ -266,7 +266,7 @@ Create `~/.cursor/mcp.json` in your home directory with the same configuration.
 If available as an npm package, you can use the automated setup:[7]
 
 ```bash
-npx @dimwebdev/legal-expert-mcp-server setup --client cursor
+npx @dimwebdev/legal-info-mcp-server setup --client cursor
 ```
 
 ### Verification

@@ -12,12 +12,12 @@ import "./prompts/risk_analysis_framework.js";
 import "./prompts/intellectual_property_and_oss_audit.js";
 import "./prompts/security_legal_alignment_check.js";
 import "./prompts/website_and_app_legal_disclosure_check.js";
-import "./prompts/legal_expert_prompts_catalog.js";
+import "./prompts/legal_prompts_catalog.js";
 
 async function main() {
   const transport = new StdioServerTransport();
   await server.connect(transport);
-  console.error("Legal Expert MCP Server running on stdio");
+  console.error("Legal Info MCP Server running on stdio");
 }
 
 main().catch((error) => {

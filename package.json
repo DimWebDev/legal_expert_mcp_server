@@ -1,7 +1,7 @@
 {
-  "name": "@dimwebdev/legal-expert-mcp-server",
-  "version": "1.0.6",
-  "description": "MCP server providing elite-level legal expert prompts for comprehensive compliance analysis",
+  "name": "@dimwebdev/legal-info-mcp-server",
+  "version": "1.0.7",
+  "description": "MCP server providing legal information prompts for compliance analysis. NOT legal advice - informational only. Use at your own risk.",
   "keywords": [
     "mcp",
     "legal",
@@ -46,10 +46,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/DimWebDev/legal_expert_mcp_server.git"
+    "url": "https://github.com/DimWebDev/legal_info_mcp_server.git"
   },
-  "homepage": "https://github.com/DimWebDev/legal_expert_mcp_server#readme",
+  "homepage": "https://github.com/DimWebDev/legal_info_mcp_server#readme",
   "bugs": {
-    "url": "https://github.com/DimWebDev/legal_expert_mcp_server/issues"
+    "url": "https://github.com/DimWebDev/legal_info_mcp_server/issues"
   }
 }
