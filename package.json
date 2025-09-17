@@ -1,6 +1,6 @@
 {
   "name": "@dimwebdev/legal-info-mcp-server",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "MCP server providing legal information prompts for compliance analysis. NOT legal advice - informational only. Use at your own risk.",
   "keywords": [
     "mcp",

@@ -4,7 +4,7 @@ import { z } from "zod";
 server.registerPrompt(
   "intellectual_property_and_oss_audit",
   {
-    title: "Intellectual Property & OSS Audit",
+    title: "intellectual_property_&_oss_audit",
     description:
       "Software IP ownership validation, OSS license compliance, and infringement risk review",
     argsSchema: {

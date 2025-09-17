@@ -4,7 +4,7 @@ import { z } from "zod";
 server.registerPrompt(
   "market_and_customer_compliance_audit",
   {
-    title: "Market & Customer Compliance Audit",
+    title: "market_&_customer_compliance_audit",
     description: "Consumer protection and customer-facing compliance review",
     argsSchema: {
       jurisdiction: z

@@ -4,7 +4,7 @@ import { z } from "zod";
 server.registerPrompt(
   "security_legal_alignment_check",
   {
-    title: "Security & Legal Alignment Check",
+    title: "security_&_legal_alignment_check",
     description:
       "Evaluate alignment between security controls and legal/compliance obligations",
     argsSchema: {

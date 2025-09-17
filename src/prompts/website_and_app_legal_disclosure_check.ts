@@ -4,7 +4,7 @@ import { z } from "zod";
 server.registerPrompt(
   "website_and_app_legal_disclosure_check",
   {
-    title: "Website & App Legal Disclosure Check",
+    title: "website_&_app_legal_disclosure_check",
     description:
       "Audit of mandatory and best-practice legal disclosures for digital products",
     argsSchema: {

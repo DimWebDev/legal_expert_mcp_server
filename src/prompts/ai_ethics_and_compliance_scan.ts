@@ -4,7 +4,7 @@ import { z } from "zod";
 server.registerPrompt(
   "ai_ethics_and_compliance_scan",
   {
-    title: "AI Ethics & Compliance Scan",
+    title: "ai_ethics_&_compliance_scan",
     description:
       "AI/ML system compliance with EU AI Act, FTC guidance, and ethical standards",
     argsSchema: {

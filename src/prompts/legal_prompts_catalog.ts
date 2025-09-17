@@ -4,7 +4,7 @@ import { z } from "zod";
 server.registerPrompt(
   "legal_prompts_catalog",
   {
-    title: "Legal Prompts Catalog",
+    title: "legal_prompts_catalog",
     description: "List all available legal analysis prompts",
     argsSchema: {},
   },

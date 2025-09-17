@@ -4,7 +4,7 @@ import { z } from "zod";
 server.registerPrompt(
   "legal_landscape_discovery",
   {
-    title: "Legal Landscape Discovery",
+    title: "legal_landscape_discovery",
     description:
       "Guide developers and startups through legal frameworks relevant to their business sector and jurisdiction",
     argsSchema: {

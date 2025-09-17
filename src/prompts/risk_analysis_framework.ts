@@ -4,7 +4,7 @@ import { z } from "zod";
 server.registerPrompt(
   "risk_analysis_framework",
   {
-    title: "Risk Analysis Framework",
+    title: "risk_analysis_framework",
     description:
       "Systematic legal risk prioritization by probability and impact assessment",
     argsSchema: {

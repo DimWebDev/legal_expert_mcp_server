@@ -4,7 +4,7 @@ import { z } from "zod";
 server.registerPrompt(
   "comprehensive_privacy_audit",
   {
-    title: "Comprehensive Privacy Compliance Audit",
+    title: "comprehensive_privacy_compliance_audit",
     description:
       "End-to-end privacy law compliance review with data flow mapping and gap analysis",
     argsSchema: {
